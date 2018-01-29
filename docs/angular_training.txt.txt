@@ -1,0 +1,10 @@
+Training repo:
+git clone https://github.com/scottpreston/angular-training
+
+
+npm:
+npm install
+npm uninstall
+
+
+https://expressjs.com/en/4x/api.html
