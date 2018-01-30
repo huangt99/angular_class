@@ -31,3 +31,15 @@ app.post('/profile', upload.array(), function (req, res, next) {
   console.log(req.body);
   res.json(req.body);
 });
+
+let tweetsList = [];
+
+app.post('/tweet', function(req, res) {
+    var json = req.body;
+    tweetsList.push(json.message);
+    res.json({status:"success"});
+});
+
+app.get('/tweets', function(req, res) {
+    res.json(tweetsList);
+});

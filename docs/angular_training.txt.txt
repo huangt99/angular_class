@@ -8,3 +8,15 @@ npm uninstall
 
 
 https://expressjs.com/en/4x/api.html
+
+
+--install angular
+sudo npm install -g @angular/cli
+
+
+--create new project
+ng new my-first-app
+
+
+--compile and run the app
+ng serve
