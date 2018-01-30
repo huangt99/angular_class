@@ -1,0 +1,6 @@
+<p *ngIf="id%2===0" appHighlight>
+{{name}} -- {{id}}: <button (click)="vote('name')">Vote</button>
+</p>
+<p *ngIf="id%2!==0" >
+  {{name}} -- {{id}}: <button (click)="vote('name')">Vote</button>
+ </p>

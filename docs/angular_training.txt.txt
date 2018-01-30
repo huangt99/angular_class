@@ -9,14 +9,22 @@ npm uninstall
 
 https://expressjs.com/en/4x/api.html
 
-
---install angular
-sudo npm install -g @angular/cli
-
-
---create new project
-ng new my-first-app
+Wifi: ICC Guest
+green27duck
 
 
---compile and run the app
-ng serve
+--angular
+ng g component button
+
+ng g service data
+
+ng g directive validate
+
+ng g module common
+
+ng g component common/test --module common --export true
+
+
+--debug tool
+Chrome debug tool: Augrey
+Chrome debug command line: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
