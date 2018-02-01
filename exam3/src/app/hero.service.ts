@@ -10,8 +10,6 @@ export class HeroService {
   results: string[];
 
   constructor(private http: Http) { 
-    this.heroes.push(new Hero("Tony Stark",1));
-    this.heroes.push(new Hero("Steve Reogers",2));
   }
 
 

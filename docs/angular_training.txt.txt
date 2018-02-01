@@ -15,15 +15,14 @@ green27duck
 
 --angular
 ng g component button
-
 ng g service data
-
-
 ng g directive validate
-
 ng g module common
 
 ng g component common/test --module common --export true
+
+--code coverage report
+ng test --code-coverage
 
 --Forms:
 The `#` character is an `Angular Template Referecne Variable`. It allows direct access to an element from within the template.
