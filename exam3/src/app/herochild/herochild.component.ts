@@ -9,9 +9,12 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 export class HerochildComponent implements OnInit {
 
   constructor() { }
+  toHighlight:boolean;
 
   @Input('name') name:string;
   @Input('id') id:number;
+  @Input('index') index: number
+
   @Output() onVoted = new EventEmitter<String>();
 
   vote(voteName:string) {
@@ -21,6 +24,8 @@ export class HerochildComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.toHighlight = this.index%2===0;
+
   }
 
 }

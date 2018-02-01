@@ -7,7 +7,9 @@ import { HeroComponent } from './hero/hero.component';
 import { HeroparentComponent } from './heroparent/heroparent.component';
 import { HerochildComponent } from './herochild/herochild.component';
 import { HighlightDirective } from './highlight.directive';
-
+import { HeroformComponent } from './heroform/heroform.component';
+import { HeroService } from './hero.service'
+import { HttpModule} from '@angular/http'
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { HighlightDirective } from './highlight.directive';
     HeroComponent,
     HeroparentComponent,
     HerochildComponent,
-    HighlightDirective
+    HighlightDirective,
+    HeroformComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
   ],
-  providers: [],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

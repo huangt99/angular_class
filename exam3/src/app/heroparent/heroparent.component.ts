@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../hero';
+import { HeroService } from '../hero.service'
+import { Http } from '@angular/http'
 
 @Component({
   selector: 'app-heroparent',
@@ -7,14 +9,14 @@ import { Hero } from '../../hero';
   styleUrls: ['./heroparent.component.css']
 })
 export class HeroparentComponent implements OnInit {
-  heroes: Array<Hero> = new Array();
+  heroes: Array<Hero>;
   voteCount: number = 0;
-
-  constructor() { }
+  results: string[];
+      
+  constructor(private http: Http, private heroService: HeroService) { }
 
   ngOnInit() {
-      this.heroes.push(new Hero(1,"Tony Stark"));
-      this.heroes.push(new Hero(2,"Steve Reogers"));
+      this.heroes = this.heroService.getHeros();
   }
 
   onVoted(agreed:string)

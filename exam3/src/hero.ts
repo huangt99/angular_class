@@ -1,10 +1,8 @@
 export class Hero{
-    id: number;
-    name:string;
-
-    constructor(i, n)
-    {
-        this.id = i;
-        this.name = n;
+    constructor(
+        public name: string,
+        public id: number,
+        public power?: string,
+        public alterEgo?: string
+      ) {  }
     }
-}
