@@ -9,14 +9,19 @@ import { Http } from '@angular/http'
   styleUrls: ['./heroparent.component.css']
 })
 export class HeroparentComponent implements OnInit {
-  heroes: Array<Hero>;
+  heroes: Array<Hero> = new Array();
   voteCount: number = 0;
   results: string[];
       
   constructor(private http: Http, private heroService: HeroService) { }
 
   ngOnInit() {
-      this.heroes = this.heroService.getHeros();
+    this.heroService.fetchHeros().subscribe(data => {
+      const json = data.json();
+      json.forEach(h => {
+        this.heroes.push( new Hero(h,this.heroes.length));
+      });
+    })
   }
 
   onVoted(agreed:string)

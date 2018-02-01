@@ -3,7 +3,9 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-</div>
-<h2>Here are the hero list: </h2>
-<app-heroparent></app-heroparent>
+  <a routerLink="/" routerLinkActive="active">Home</a> | 
+  <a routerLink="/herocreate" routerLinkActive="active">Create A Hero</a> | 
+  <a routerLink="/heros" routerLinkActive="active">Hero's List</a>
+  <hr>
+  <router-outlet></router-outlet>
 

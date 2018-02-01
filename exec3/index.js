@@ -37,7 +37,7 @@ app.post('/profile', upload.array(), function (req, res, next) {
 
 let tweetsList = [];
 
-app.post('/tweet', function(req, res) {
+app.post('/tweets', function(req, res) {
     var json = req.body;
     tweetsList.push(json.message);
     res.json({status:"success"});
