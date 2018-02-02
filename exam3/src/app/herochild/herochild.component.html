@@ -4,3 +4,10 @@
 <p *ngIf="toHighlight===false" >
   {{name}} -- <a routerLink="/hero/{{index}}">{{index}}</a>: <button (click)="vote('name')">Vote</button>
  </p>
+
+ 
+<div>Increase/Descrease Count: {{ counter$ | async }}
+ <button (click)="increment()">Increment</button>
+ <button (click)="decrement()">Decrement</button> 
+
+</div>  

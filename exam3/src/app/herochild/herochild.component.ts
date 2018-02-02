@@ -1,5 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Store } from "@ngrx/store";
 
+interface AppState {
+  counter: number
+}
 
 @Component({
   selector: 'app-herochild',
@@ -8,7 +13,11 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 })
 export class HerochildComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<AppState>) {
+    // sets it to reference in store, selecting state 'counter'
+    this.counter$ = this.store.select('counter');
+  }
+  
   toHighlight:boolean;
 
   @Input('name') name:string;
@@ -17,6 +26,18 @@ export class HerochildComponent implements OnInit {
 
   @Output() onVoted = new EventEmitter<String>();
 
+  private counter$: Observable<number>;
+  
+
+
+  increment() {
+    this.store.dispatch({type: 'INCREMENT'});
+  }
+
+  decrement() {
+    this.store.dispatch({type: 'DECREMENT'});
+  }
+  
   vote(voteName:string) {
     this.onVoted.emit(voteName);
     console.log("Voted "+voteName+":"+this.name);

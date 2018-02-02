@@ -12,6 +12,7 @@ https://expressjs.com/en/4x/api.html
 Wifi: ICC Guest
 green27duck
 
+rxmarbles.com  --overable
 
 --angular
 ng g component button
@@ -19,10 +20,16 @@ ng g service data
 ng g directive validate
 ng g module common
 
+--es6
+
+...state  <==> Object.assign(state)
+
 ng g component common/test --module common --export true
 
 --code coverage report
 ng test --code-coverage
+
+counter$ -- $ convention to define a string
 
 --Forms:
 The `#` character is an `Angular Template Referecne Variable`. It allows direct access to an element from within the template.
@@ -30,3 +37,7 @@ The `#` character is an `Angular Template Referecne Variable`. It allows direct 
 --debug tool
 Chrome debug tool: Augrey
 Chrome debug command line: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
+
+--http server
+npm install http-server -g
+http-server -o (node_modules/http-server/bin/http-server -o)
