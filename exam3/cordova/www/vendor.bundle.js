@@ -1,5 +1,898 @@
 webpackJsonp(["vendor"],{
 
+/***/ "../../../../@ngrx/store/@ngrx/store.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Store; });
+/* unused harmony export select */
+/* unused harmony export combineReducers */
+/* unused harmony export compose */
+/* unused harmony export createReducerFactory */
+/* unused harmony export ActionsSubject */
+/* unused harmony export INIT */
+/* unused harmony export ReducerManager */
+/* unused harmony export ReducerObservable */
+/* unused harmony export ReducerManagerDispatcher */
+/* unused harmony export UPDATE */
+/* unused harmony export ScannedActionsSubject */
+/* unused harmony export createSelector */
+/* unused harmony export createSelectorFactory */
+/* unused harmony export createFeatureSelector */
+/* unused harmony export defaultMemoize */
+/* unused harmony export defaultStateFn */
+/* unused harmony export State */
+/* unused harmony export StateObservable */
+/* unused harmony export reduceState */
+/* unused harmony export INITIAL_STATE */
+/* unused harmony export _REDUCER_FACTORY */
+/* unused harmony export REDUCER_FACTORY */
+/* unused harmony export _INITIAL_REDUCERS */
+/* unused harmony export INITIAL_REDUCERS */
+/* unused harmony export STORE_FEATURES */
+/* unused harmony export _INITIAL_STATE */
+/* unused harmony export META_REDUCERS */
+/* unused harmony export _STORE_REDUCERS */
+/* unused harmony export _FEATURE_REDUCERS */
+/* unused harmony export FEATURE_REDUCERS */
+/* unused harmony export _FEATURE_REDUCERS_TOKEN */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return StoreModule; });
+/* unused harmony export StoreRootModule */
+/* unused harmony export StoreFeatureModule */
+/* unused harmony export _initialStateFactory */
+/* unused harmony export _createStoreReducers */
+/* unused harmony export _createFeatureReducers */
+/* unused harmony export ɵc */
+/* unused harmony export ɵd */
+/* unused harmony export ɵe */
+/* unused harmony export ɵf */
+/* unused harmony export ɵb */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_pluck__ = __webpack_require__("../../../../rxjs/_esm5/operator/pluck.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/_esm5/operator/distinctUntilChanged.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_BehaviorSubject__ = __webpack_require__("../../../../rxjs/_esm5/BehaviorSubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_scheduler_queue__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/queue.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_observeOn__ = __webpack_require__("../../../../rxjs/_esm5/operator/observeOn.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_withLatestFrom__ = __webpack_require__("../../../../rxjs/_esm5/operator/withLatestFrom.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_scan__ = __webpack_require__("../../../../rxjs/_esm5/operator/scan.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_Subject__ = __webpack_require__("../../../../rxjs/_esm5/Subject.js");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var INIT = ('@ngrx/store/init');
+var ActionsSubject = (function (_super) {
+    __extends(ActionsSubject, _super);
+    function ActionsSubject() {
+        return _super.call(this, { type: INIT }) || this;
+    }
+    /**
+     * @param {?} action
+     * @return {?}
+     */
+    ActionsSubject.prototype.next = function (action) {
+        if (typeof action === 'undefined') {
+            throw new TypeError("Actions must be objects");
+        }
+        else if (typeof action.type === 'undefined') {
+            throw new TypeError("Actions must have a type property");
+        }
+        _super.prototype.next.call(this, action);
+    };
+    /**
+     * @return {?}
+     */
+    ActionsSubject.prototype.complete = function () {
+        /* noop */
+    };
+    /**
+     * @return {?}
+     */
+    ActionsSubject.prototype.ngOnDestroy = function () {
+        _super.prototype.complete.call(this);
+    };
+    return ActionsSubject;
+}(__WEBPACK_IMPORTED_MODULE_5_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]));
+ActionsSubject.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */] },
+];
+/** @nocollapse */
+ActionsSubject.ctorParameters = function () { return []; };
+var ACTIONS_SUBJECT_PROVIDERS = [ActionsSubject];
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var _INITIAL_STATE = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Internal Initial State');
+var INITIAL_STATE = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Initial State');
+var REDUCER_FACTORY = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Reducer Factory');
+var _REDUCER_FACTORY = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Reducer Factory Provider');
+var INITIAL_REDUCERS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Initial Reducers');
+var _INITIAL_REDUCERS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Internal Initial Reducers');
+var META_REDUCERS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Meta Reducers');
+var STORE_FEATURES = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Store Features');
+var _STORE_REDUCERS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Internal Store Reducers');
+var _FEATURE_REDUCERS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Internal Feature Reducers');
+var _FEATURE_REDUCERS_TOKEN = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Internal Feature Reducers Token');
+var FEATURE_REDUCERS = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */]('@ngrx/store Feature Reducers');
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * @param {?} reducers
+ * @param {?=} initialState
+ * @return {?}
+ */
+function combineReducers(reducers, initialState) {
+    if (initialState === void 0) { initialState = {}; }
+    var /** @type {?} */ reducerKeys = Object.keys(reducers);
+    var /** @type {?} */ finalReducers = {};
+    for (var /** @type {?} */ i = 0; i < reducerKeys.length; i++) {
+        var /** @type {?} */ key = reducerKeys[i];
+        if (typeof reducers[key] === 'function') {
+            finalReducers[key] = reducers[key];
+        }
+    }
+    var /** @type {?} */ finalReducerKeys = Object.keys(finalReducers);
+    return function combination(state, action) {
+        state = state || initialState;
+        var /** @type {?} */ hasChanged = false;
+        var /** @type {?} */ nextState = {};
+        for (var /** @type {?} */ i = 0; i < finalReducerKeys.length; i++) {
+            var /** @type {?} */ key = finalReducerKeys[i];
+            var /** @type {?} */ reducer = finalReducers[key];
+            var /** @type {?} */ previousStateForKey = state[key];
+            var /** @type {?} */ nextStateForKey = reducer(previousStateForKey, action);
+            nextState[key] = nextStateForKey;
+            hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
+        }
+        return hasChanged ? nextState : state;
+    };
+}
+/**
+ * @template T
+ * @param {?} object
+ * @param {?} keyToRemove
+ * @return {?}
+ */
+function omit(object, keyToRemove) {
+    return Object.keys(object)
+        .filter(function (key) { return key !== keyToRemove; })
+        .reduce(function (result, key) {
+        return Object.assign(result, (_a = {}, _a[key] = object[key], _a));
+        var _a;
+    }, {});
+}
+/**
+ * @param {...?} functions
+ * @return {?}
+ */
+function compose() {
+    var functions = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        functions[_i] = arguments[_i];
+    }
+    return function (arg) {
+        if (functions.length === 0) {
+            return arg;
+        }
+        var /** @type {?} */ last = functions[functions.length - 1];
+        var /** @type {?} */ rest = functions.slice(0, -1);
+        return rest.reduceRight(function (composed, fn) { return fn(composed); }, last(arg));
+    };
+}
+/**
+ * @template T, V
+ * @param {?} reducerFactory
+ * @param {?=} metaReducers
+ * @return {?}
+ */
+function createReducerFactory(reducerFactory, metaReducers) {
+    if (Array.isArray(metaReducers) && metaReducers.length > 0) {
+        return compose.apply(null, metaReducers.concat([reducerFactory]));
+    }
+    return reducerFactory;
+}
+/**
+ * @template T, V
+ * @param {?} reducer
+ * @param {?=} metaReducers
+ * @return {?}
+ */
+function createFeatureReducer(reducer, metaReducers) {
+    if (Array.isArray(metaReducers) && metaReducers.length > 0) {
+        return compose.apply(void 0, metaReducers)(reducer);
+    }
+    return reducer;
+}
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * @abstract
+ */
+var ReducerObservable = (function (_super) {
+    __extends(ReducerObservable, _super);
+    function ReducerObservable() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return ReducerObservable;
+}(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["a" /* Observable */]));
+/**
+ * @abstract
+ */
+var ReducerManagerDispatcher = (function (_super) {
+    __extends(ReducerManagerDispatcher, _super);
+    function ReducerManagerDispatcher() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return ReducerManagerDispatcher;
+}(ActionsSubject));
+var UPDATE = ('@ngrx/store/update-reducers');
+var ReducerManager = (function (_super) {
+    __extends(ReducerManager, _super);
+    /**
+     * @param {?} dispatcher
+     * @param {?} initialState
+     * @param {?} reducers
+     * @param {?} reducerFactory
+     */
+    function ReducerManager(dispatcher, initialState, reducers, reducerFactory) {
+        var _this = _super.call(this, reducerFactory(reducers, initialState)) || this;
+        _this.dispatcher = dispatcher;
+        _this.initialState = initialState;
+        _this.reducers = reducers;
+        _this.reducerFactory = reducerFactory;
+        return _this;
+    }
+    /**
+     * @param {?} __0
+     * @return {?}
+     */
+    ReducerManager.prototype.addFeature = function (_a) {
+        var reducers = _a.reducers, reducerFactory = _a.reducerFactory, metaReducers = _a.metaReducers, initialState = _a.initialState, key = _a.key;
+        var /** @type {?} */ reducer = typeof reducers === 'function'
+            ? function (state, action) { return createFeatureReducer(reducers, metaReducers)(state || initialState, action); }
+            : createReducerFactory(reducerFactory, metaReducers)(reducers, initialState);
+        this.addReducer(key, reducer);
+    };
+    /**
+     * @param {?} __0
+     * @return {?}
+     */
+    ReducerManager.prototype.removeFeature = function (_a) {
+        var key = _a.key;
+        this.removeReducer(key);
+    };
+    /**
+     * @param {?} key
+     * @param {?} reducer
+     * @return {?}
+     */
+    ReducerManager.prototype.addReducer = function (key, reducer) {
+        this.reducers = Object.assign({}, this.reducers, (_a = {}, _a[key] = reducer, _a));
+        this.updateReducers();
+        var _a;
+    };
+    /**
+     * @param {?} key
+     * @return {?}
+     */
+    ReducerManager.prototype.removeReducer = function (key) {
+        this.reducers = omit(this.reducers, key);
+        this.updateReducers();
+    };
+    /**
+     * @return {?}
+     */
+    ReducerManager.prototype.updateReducers = function () {
+        this.next(this.reducerFactory(this.reducers, this.initialState));
+        this.dispatcher.next({ type: UPDATE });
+    };
+    /**
+     * @return {?}
+     */
+    ReducerManager.prototype.ngOnDestroy = function () {
+        this.complete();
+    };
+    return ReducerManager;
+}(__WEBPACK_IMPORTED_MODULE_5_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]));
+ReducerManager.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */] },
+];
+/** @nocollapse */
+ReducerManager.ctorParameters = function () { return [
+    { type: ReducerManagerDispatcher, },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */], args: [INITIAL_STATE,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */], args: [INITIAL_REDUCERS,] },] },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */], args: [REDUCER_FACTORY,] },] },
+]; };
+var REDUCER_MANAGER_PROVIDERS = [
+    ReducerManager,
+    { provide: ReducerObservable, useExisting: ReducerManager },
+    { provide: ReducerManagerDispatcher, useExisting: ActionsSubject },
+];
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var ScannedActionsSubject = (function (_super) {
+    __extends(ScannedActionsSubject, _super);
+    function ScannedActionsSubject() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * @return {?}
+     */
+    ScannedActionsSubject.prototype.ngOnDestroy = function () {
+        this.complete();
+    };
+    return ScannedActionsSubject;
+}(__WEBPACK_IMPORTED_MODULE_10_rxjs_Subject__["a" /* Subject */]));
+ScannedActionsSubject.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */] },
+];
+/** @nocollapse */
+ScannedActionsSubject.ctorParameters = function () { return []; };
+var SCANNED_ACTIONS_SUBJECT_PROVIDERS = [
+    ScannedActionsSubject,
+];
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * @abstract
+ */
+var StateObservable = (function (_super) {
+    __extends(StateObservable, _super);
+    function StateObservable() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return StateObservable;
+}(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["a" /* Observable */]));
+var State = (function (_super) {
+    __extends(State, _super);
+    /**
+     * @param {?} actions$
+     * @param {?} reducer$
+     * @param {?} scannedActions
+     * @param {?} initialState
+     */
+    function State(actions$, reducer$, scannedActions, initialState) {
+        var _this = _super.call(this, initialState) || this;
+        var /** @type {?} */ actionsOnQueue$ = __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_observeOn__["a" /* observeOn */].call(actions$, __WEBPACK_IMPORTED_MODULE_6_rxjs_scheduler_queue__["a" /* queue */]);
+        var /** @type {?} */ withLatestReducer$ = __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_withLatestFrom__["a" /* withLatestFrom */].call(actionsOnQueue$, reducer$);
+        var /** @type {?} */ stateAndAction$ = __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_scan__["a" /* scan */].call(withLatestReducer$, reduceState, { state: initialState });
+        _this.stateSubscription = stateAndAction$.subscribe(function (_a) {
+            var state = _a.state, action = _a.action;
+            _this.next(state);
+            scannedActions.next(action);
+        });
+        return _this;
+    }
+    /**
+     * @return {?}
+     */
+    State.prototype.ngOnDestroy = function () {
+        this.stateSubscription.unsubscribe();
+        this.complete();
+    };
+    return State;
+}(__WEBPACK_IMPORTED_MODULE_5_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]));
+State.INIT = INIT;
+State.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */] },
+];
+/** @nocollapse */
+State.ctorParameters = function () { return [
+    { type: ActionsSubject, },
+    { type: ReducerObservable, },
+    { type: ScannedActionsSubject, },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */], args: [INITIAL_STATE,] },] },
+]; };
+/**
+ * @template T, V
+ * @param {?=} stateActionPair
+ * @param {?=} __1
+ * @return {?}
+ */
+function reduceState(stateActionPair, _a) {
+    if (stateActionPair === void 0) { stateActionPair = { state: undefined }; }
+    var action = _a[0], reducer = _a[1];
+    var state = stateActionPair.state;
+    return { state: reducer(state, action), action: action };
+}
+var STATE_PROVIDERS = [
+    State,
+    { provide: StateObservable, useExisting: State },
+];
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var Store = (function (_super) {
+    __extends(Store, _super);
+    /**
+     * @param {?} state$
+     * @param {?} actionsObserver
+     * @param {?} reducerManager
+     */
+    function Store(state$, actionsObserver, reducerManager) {
+        var _this = _super.call(this) || this;
+        _this.actionsObserver = actionsObserver;
+        _this.reducerManager = reducerManager;
+        _this.source = state$;
+        return _this;
+    }
+    /**
+     * @param {?} pathOrMapFn
+     * @param {...?} paths
+     * @return {?}
+     */
+    Store.prototype.select = function (pathOrMapFn) {
+        var paths = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            paths[_i - 1] = arguments[_i];
+        }
+        return select.apply(void 0, [pathOrMapFn].concat(paths))(this);
+    };
+    /**
+     * @template R
+     * @param {?} operator
+     * @return {?}
+     */
+    Store.prototype.lift = function (operator) {
+        var /** @type {?} */ store = new Store(this, this.actionsObserver, this.reducerManager);
+        store.operator = operator;
+        return store;
+    };
+    /**
+     * @template V
+     * @param {?} action
+     * @return {?}
+     */
+    Store.prototype.dispatch = function (action) {
+        this.actionsObserver.next(action);
+    };
+    /**
+     * @param {?} action
+     * @return {?}
+     */
+    Store.prototype.next = function (action) {
+        this.actionsObserver.next(action);
+    };
+    /**
+     * @param {?} err
+     * @return {?}
+     */
+    Store.prototype.error = function (err) {
+        this.actionsObserver.error(err);
+    };
+    /**
+     * @return {?}
+     */
+    Store.prototype.complete = function () {
+        this.actionsObserver.complete();
+    };
+    /**
+     * @template State, Actions
+     * @param {?} key
+     * @param {?} reducer
+     * @return {?}
+     */
+    Store.prototype.addReducer = function (key, reducer) {
+        this.reducerManager.addReducer(key, reducer);
+    };
+    /**
+     * @template Key
+     * @param {?} key
+     * @return {?}
+     */
+    Store.prototype.removeReducer = function (key) {
+        this.reducerManager.removeReducer(key);
+    };
+    return Store;
+}(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["a" /* Observable */]));
+Store.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */] },
+];
+/** @nocollapse */
+Store.ctorParameters = function () { return [
+    { type: StateObservable, },
+    { type: ActionsSubject, },
+    { type: ReducerManager, },
+]; };
+var STORE_PROVIDERS = [Store];
+/**
+ * @template T, K
+ * @param {?} pathOrMapFn
+ * @param {...?} paths
+ * @return {?}
+ */
+function select(pathOrMapFn) {
+    var paths = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        paths[_i - 1] = arguments[_i];
+    }
+    return function selectOperator(source$) {
+        var /** @type {?} */ mapped$;
+        if (typeof pathOrMapFn === 'string') {
+            mapped$ = __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_pluck__["a" /* pluck */].call.apply(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_pluck__["a" /* pluck */], [source$, pathOrMapFn].concat(paths));
+        }
+        else if (typeof pathOrMapFn === 'function') {
+            mapped$ = __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_map__["a" /* map */].call(source$, pathOrMapFn);
+        }
+        else {
+            throw new TypeError("Unexpected type '" + typeof pathOrMapFn + "' in select operator," +
+                " expected 'string' or 'function'");
+        }
+        return __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_distinctUntilChanged__["a" /* distinctUntilChanged */].call(mapped$);
+    };
+}
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * @record
+ */
+/**
+ * @param {?} a
+ * @param {?} b
+ * @return {?}
+ */
+function isEqualCheck(a, b) {
+    return a === b;
+}
+/**
+ * @param {?} t
+ * @param {?=} isEqual
+ * @return {?}
+ */
+function defaultMemoize(t, isEqual) {
+    if (isEqual === void 0) { isEqual = isEqualCheck; }
+    var /** @type {?} */ lastArguments = null;
+    var /** @type {?} */ lastResult = null;
+    /**
+     * @return {?}
+     */
+    function reset() {
+        lastArguments = null;
+        lastResult = null;
+    }
+    /**
+     * @return {?}
+     */
+    function memoized() {
+        if (!lastArguments) {
+            lastResult = t.apply(null, arguments);
+            lastArguments = arguments;
+            return lastResult;
+        }
+        for (var /** @type {?} */ i = 0; i < arguments.length; i++) {
+            if (!isEqual(arguments[i], lastArguments[i])) {
+                lastResult = t.apply(null, arguments);
+                lastArguments = arguments;
+                return lastResult;
+            }
+        }
+        return lastResult;
+    }
+    return { memoized: memoized, reset: reset };
+}
+/**
+ * @param {...?} input
+ * @return {?}
+ */
+function createSelector() {
+    var input = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        input[_i] = arguments[_i];
+    }
+    return createSelectorFactory(defaultMemoize).apply(void 0, input);
+}
+/**
+ * @param {?} state
+ * @param {?} selectors
+ * @param {?} memoizedProjector
+ * @return {?}
+ */
+function defaultStateFn(state, selectors, memoizedProjector) {
+    var /** @type {?} */ args = selectors.map(function (fn) { return fn(state); });
+    return memoizedProjector.memoized.apply(null, args);
+}
+/**
+ * @param {?} memoize
+ * @param {?=} options
+ * @return {?}
+ */
+function createSelectorFactory(memoize, options) {
+    if (options === void 0) { options = {
+        stateFn: defaultStateFn,
+    }; }
+    return function () {
+        var input = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            input[_i] = arguments[_i];
+        }
+        var /** @type {?} */ args = input;
+        if (Array.isArray(args[0])) {
+            var head = args[0], tail = args.slice(1);
+            args = head.concat(tail);
+        }
+        var /** @type {?} */ selectors = args.slice(0, args.length - 1);
+        var /** @type {?} */ projector = args[args.length - 1];
+        var /** @type {?} */ memoizedSelectors = selectors.filter(function (selector) { return selector.release && typeof selector.release === 'function'; });
+        var /** @type {?} */ memoizedProjector = memoize(function () {
+            var selectors = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                selectors[_i] = arguments[_i];
+            }
+            return projector.apply(null, selectors);
+        });
+        var /** @type {?} */ memoizedState = defaultMemoize(function (state) {
+            return options.stateFn.apply(null, [state, selectors, memoizedProjector]);
+        });
+        /**
+         * @return {?}
+         */
+        function release() {
+            memoizedState.reset();
+            memoizedProjector.reset();
+            memoizedSelectors.forEach(function (selector) { return selector.release(); });
+        }
+        return Object.assign(memoizedState.memoized, {
+            release: release,
+            projector: memoizedProjector.memoized,
+        });
+    };
+}
+/**
+ * @template T
+ * @param {?} featureName
+ * @return {?}
+ */
+function createFeatureSelector(featureName) {
+    return createSelector(function (state) { return state[featureName]; }, function (featureState) { return featureState; });
+}
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var StoreRootModule = (function () {
+    /**
+     * @param {?} actions$
+     * @param {?} reducer$
+     * @param {?} scannedActions$
+     */
+    function StoreRootModule(actions$, reducer$, scannedActions$) {
+    }
+    return StoreRootModule;
+}());
+StoreRootModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */], args: [{},] },
+];
+/** @nocollapse */
+StoreRootModule.ctorParameters = function () { return [
+    { type: ActionsSubject, },
+    { type: ReducerObservable, },
+    { type: ScannedActionsSubject, },
+]; };
+var StoreFeatureModule = (function () {
+    /**
+     * @param {?} features
+     * @param {?} featureReducers
+     * @param {?} reducerManager
+     */
+    function StoreFeatureModule(features, featureReducers, reducerManager) {
+        this.features = features;
+        this.featureReducers = featureReducers;
+        this.reducerManager = reducerManager;
+        features
+            .map(function (feature, index) {
+            var /** @type {?} */ featureReducerCollection = featureReducers.shift();
+            var /** @type {?} */ reducers = featureReducerCollection[index];
+            return Object.assign({}, feature, { reducers: reducers, initialState: _initialStateFactory(feature.initialState) });
+        })
+            .forEach(function (feature) { return reducerManager.addFeature(feature); });
+    }
+    /**
+     * @return {?}
+     */
+    StoreFeatureModule.prototype.ngOnDestroy = function () {
+        var _this = this;
+        this.features.forEach(function (feature) { return _this.reducerManager.removeFeature(feature); });
+    };
+    return StoreFeatureModule;
+}());
+StoreFeatureModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */], args: [{},] },
+];
+/** @nocollapse */
+StoreFeatureModule.ctorParameters = function () { return [
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */], args: [STORE_FEATURES,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */], args: [FEATURE_REDUCERS,] },] },
+    { type: ReducerManager, },
+]; };
+var StoreModule = (function () {
+    function StoreModule() {
+    }
+    /**
+     * @param {?} reducers
+     * @param {?=} config
+     * @return {?}
+     */
+    StoreModule.forRoot = function (reducers, config) {
+        if (config === void 0) { config = {}; }
+        return {
+            ngModule: StoreRootModule,
+            providers: [
+                { provide: _INITIAL_STATE, useValue: config.initialState },
+                {
+                    provide: INITIAL_STATE,
+                    useFactory: _initialStateFactory,
+                    deps: [_INITIAL_STATE],
+                },
+                { provide: _INITIAL_REDUCERS, useValue: reducers },
+                {
+                    provide: _STORE_REDUCERS,
+                    useExisting: reducers instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */] ? reducers : _INITIAL_REDUCERS,
+                },
+                {
+                    provide: INITIAL_REDUCERS,
+                    deps: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injector */], _INITIAL_REDUCERS, [new __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */](_STORE_REDUCERS)]],
+                    useFactory: _createStoreReducers,
+                },
+                {
+                    provide: META_REDUCERS,
+                    useValue: config.metaReducers ? config.metaReducers : [],
+                },
+                {
+                    provide: _REDUCER_FACTORY,
+                    useValue: config.reducerFactory
+                        ? config.reducerFactory
+                        : combineReducers,
+                },
+                {
+                    provide: REDUCER_FACTORY,
+                    deps: [_REDUCER_FACTORY, META_REDUCERS],
+                    useFactory: createReducerFactory,
+                },
+                ACTIONS_SUBJECT_PROVIDERS,
+                REDUCER_MANAGER_PROVIDERS,
+                SCANNED_ACTIONS_SUBJECT_PROVIDERS,
+                STATE_PROVIDERS,
+                STORE_PROVIDERS,
+            ],
+        };
+    };
+    /**
+     * @param {?} featureName
+     * @param {?} reducers
+     * @param {?=} config
+     * @return {?}
+     */
+    StoreModule.forFeature = function (featureName, reducers, config) {
+        if (config === void 0) { config = {}; }
+        return {
+            ngModule: StoreFeatureModule,
+            providers: [
+                {
+                    provide: STORE_FEATURES,
+                    multi: true,
+                    useValue: /** @type {?} */ ({
+                        key: featureName,
+                        reducerFactory: config.reducerFactory
+                            ? config.reducerFactory
+                            : combineReducers,
+                        metaReducers: config.metaReducers ? config.metaReducers : [],
+                        initialState: config.initialState,
+                    }),
+                },
+                { provide: _FEATURE_REDUCERS, multi: true, useValue: reducers },
+                {
+                    provide: _FEATURE_REDUCERS_TOKEN,
+                    multi: true,
+                    useExisting: reducers instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */] ? reducers : _FEATURE_REDUCERS,
+                },
+                {
+                    provide: FEATURE_REDUCERS,
+                    multi: true,
+                    deps: [
+                        __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injector */],
+                        _FEATURE_REDUCERS,
+                        [new __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */](_FEATURE_REDUCERS_TOKEN)],
+                    ],
+                    useFactory: _createFeatureReducers,
+                },
+            ],
+        };
+    };
+    return StoreModule;
+}());
+StoreModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */], args: [{},] },
+];
+/** @nocollapse */
+StoreModule.ctorParameters = function () { return []; };
+/**
+ * @param {?} injector
+ * @param {?} reducers
+ * @param {?} tokenReducers
+ * @return {?}
+ */
+function _createStoreReducers(injector, reducers, tokenReducers) {
+    return reducers instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */] ? injector.get(reducers) : reducers;
+}
+/**
+ * @param {?} injector
+ * @param {?} reducerCollection
+ * @param {?} tokenReducerCollection
+ * @return {?}
+ */
+function _createFeatureReducers(injector, reducerCollection, tokenReducerCollection) {
+    var /** @type {?} */ reducers = reducerCollection.map(function (reducer, index) {
+        return reducer instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* InjectionToken */] ? injector.get(reducer) : reducer;
+    });
+    return reducers;
+}
+/**
+ * @param {?} initialState
+ * @return {?}
+ */
+function _initialStateFactory(initialState) {
+    if (typeof initialState === 'function') {
+        return initialState();
+    }
+    return initialState;
+}
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+//# sourceMappingURL=store.es5.js.map
+
+
+/***/ }),
+
 /***/ "../../../../css-loader/lib/css-base.js":
 /***/ (function(module, exports) {
 
@@ -698,6 +1591,66 @@ var OuterSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
     return OuterSubscriber;
 }(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
 //# sourceMappingURL=OuterSubscriber.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/Scheduler.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Scheduler; });
+/**
+ * An execution context and a data structure to order tasks and schedule their
+ * execution. Provides a notion of (potentially virtual) time, through the
+ * `now()` getter method.
+ *
+ * Each unit of work in a Scheduler is called an {@link Action}.
+ *
+ * ```ts
+ * class Scheduler {
+ *   now(): number;
+ *   schedule(work, delay?, state?): Subscription;
+ * }
+ * ```
+ *
+ * @class Scheduler
+ */
+var Scheduler = /*@__PURE__*/ (/*@__PURE__*/ function () {
+    function Scheduler(SchedulerAction, now) {
+        if (now === void 0) {
+            now = Scheduler.now;
+        }
+        this.SchedulerAction = SchedulerAction;
+        this.now = now;
+    }
+    /**
+     * Schedules a function, `work`, for execution. May happen at some point in
+     * the future, according to the `delay` parameter, if specified. May be passed
+     * some context object, `state`, which will be passed to the `work` function.
+     *
+     * The given arguments will be processed an stored as an Action object in a
+     * queue of actions.
+     *
+     * @param {function(state: ?T): ?Subscription} work A function representing a
+     * task, or some unit of work to be executed by the Scheduler.
+     * @param {number} [delay] Time to wait before executing the work, where the
+     * time unit is implicit and defined by the Scheduler itself.
+     * @param {T} [state] Some contextual data that the `work` function uses when
+     * called by the Scheduler.
+     * @return {Subscription} A subscription in order to be able to unsubscribe
+     * the scheduled work.
+     */
+    Scheduler.prototype.schedule = function (work, delay, state) {
+        if (delay === void 0) {
+            delay = 0;
+        }
+        return new this.SchedulerAction(this, work).schedule(state, delay);
+    };
+    Scheduler.now = Date.now ? Date.now : function () { return +new Date(); };
+    return Scheduler;
+}());
+//# sourceMappingURL=Scheduler.js.map 
 
 
 /***/ }),
@@ -3040,6 +3993,62 @@ function concatMap(project, resultSelector) {
 
 /***/ }),
 
+/***/ "../../../../rxjs/_esm5/operator/distinctUntilChanged.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = distinctUntilChanged;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/_esm5/operators/distinctUntilChanged.js");
+/** PURE_IMPORTS_START .._operators_distinctUntilChanged PURE_IMPORTS_END */
+
+/* tslint:enable:max-line-length */
+/**
+ * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
+ *
+ * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
+ *
+ * If a comparator function is not provided, an equality check is used by default.
+ *
+ * @example <caption>A simple example with numbers</caption>
+ * Observable.of(1, 1, 2, 2, 2, 1, 1, 2, 3, 3, 4)
+ *   .distinctUntilChanged()
+ *   .subscribe(x => console.log(x)); // 1, 2, 1, 2, 3, 4
+ *
+ * @example <caption>An example using a compare function</caption>
+ * interface Person {
+ *    age: number,
+ *    name: string
+ * }
+ *
+ * Observable.of<Person>(
+ *     { age: 4, name: 'Foo'},
+ *     { age: 7, name: 'Bar'},
+ *     { age: 5, name: 'Foo'})
+ *     { age: 6, name: 'Foo'})
+ *     .distinctUntilChanged((p: Person, q: Person) => p.name === q.name)
+ *     .subscribe(x => console.log(x));
+ *
+ * // displays:
+ * // { age: 4, name: 'Foo' }
+ * // { age: 7, name: 'Bar' }
+ * // { age: 5, name: 'Foo' }
+ *
+ * @see {@link distinct}
+ * @see {@link distinctUntilKeyChanged}
+ *
+ * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
+ * @return {Observable} An Observable that emits items from the source Observable with distinct values.
+ * @method distinctUntilChanged
+ * @owner Observable
+ */
+function distinctUntilChanged(compare, keySelector) {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__operators_distinctUntilChanged__["a" /* distinctUntilChanged */])(compare, keySelector)(this);
+}
+//# sourceMappingURL=distinctUntilChanged.js.map 
+
+
+/***/ }),
+
 /***/ "../../../../rxjs/_esm5/operator/every.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3415,6 +4424,117 @@ function mergeMap(project, resultSelector, concurrent) {
 
 /***/ }),
 
+/***/ "../../../../rxjs/_esm5/operator/observeOn.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = observeOn;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_observeOn__ = __webpack_require__("../../../../rxjs/_esm5/operators/observeOn.js");
+/** PURE_IMPORTS_START .._operators_observeOn PURE_IMPORTS_END */
+
+/**
+ *
+ * Re-emits all notifications from source Observable with specified scheduler.
+ *
+ * <span class="informal">Ensure a specific scheduler is used, from outside of an Observable.</span>
+ *
+ * `observeOn` is an operator that accepts a scheduler as a first parameter, which will be used to reschedule
+ * notifications emitted by the source Observable. It might be useful, if you do not have control over
+ * internal scheduler of a given Observable, but want to control when its values are emitted nevertheless.
+ *
+ * Returned Observable emits the same notifications (nexted values, complete and error events) as the source Observable,
+ * but rescheduled with provided scheduler. Note that this doesn't mean that source Observables internal
+ * scheduler will be replaced in any way. Original scheduler still will be used, but when the source Observable emits
+ * notification, it will be immediately scheduled again - this time with scheduler passed to `observeOn`.
+ * An anti-pattern would be calling `observeOn` on Observable that emits lots of values synchronously, to split
+ * that emissions into asynchronous chunks. For this to happen, scheduler would have to be passed into the source
+ * Observable directly (usually into the operator that creates it). `observeOn` simply delays notifications a
+ * little bit more, to ensure that they are emitted at expected moments.
+ *
+ * As a matter of fact, `observeOn` accepts second parameter, which specifies in milliseconds with what delay notifications
+ * will be emitted. The main difference between {@link delay} operator and `observeOn` is that `observeOn`
+ * will delay all notifications - including error notifications - while `delay` will pass through error
+ * from source Observable immediately when it is emitted. In general it is highly recommended to use `delay` operator
+ * for any kind of delaying of values in the stream, while using `observeOn` to specify which scheduler should be used
+ * for notification emissions in general.
+ *
+ * @example <caption>Ensure values in subscribe are called just before browser repaint.</caption>
+ * const intervals = Rx.Observable.interval(10); // Intervals are scheduled
+ *                                               // with async scheduler by default...
+ *
+ * intervals
+ * .observeOn(Rx.Scheduler.animationFrame)       // ...but we will observe on animationFrame
+ * .subscribe(val => {                           // scheduler to ensure smooth animation.
+ *   someDiv.style.height = val + 'px';
+ * });
+ *
+ * @see {@link delay}
+ *
+ * @param {IScheduler} scheduler Scheduler that will be used to reschedule notifications from source Observable.
+ * @param {number} [delay] Number of milliseconds that states with what delay every notification should be rescheduled.
+ * @return {Observable<T>} Observable that emits the same notifications as the source Observable,
+ * but with provided scheduler.
+ *
+ * @method observeOn
+ * @owner Observable
+ */
+function observeOn(scheduler, delay) {
+    if (delay === void 0) {
+        delay = 0;
+    }
+    return Object(__WEBPACK_IMPORTED_MODULE_0__operators_observeOn__["b" /* observeOn */])(scheduler, delay)(this);
+}
+//# sourceMappingURL=observeOn.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operator/pluck.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = pluck;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_pluck__ = __webpack_require__("../../../../rxjs/_esm5/operators/pluck.js");
+/** PURE_IMPORTS_START .._operators_pluck PURE_IMPORTS_END */
+
+/**
+ * Maps each source value (an object) to its specified nested property.
+ *
+ * <span class="informal">Like {@link map}, but meant only for picking one of
+ * the nested properties of every emitted object.</span>
+ *
+ * <img src="./img/pluck.png" width="100%">
+ *
+ * Given a list of strings describing a path to an object property, retrieves
+ * the value of a specified nested property from all values in the source
+ * Observable. If a property can't be resolved, it will return `undefined` for
+ * that value.
+ *
+ * @example <caption>Map every click to the tagName of the clicked target element</caption>
+ * var clicks = Rx.Observable.fromEvent(document, 'click');
+ * var tagNames = clicks.pluck('target', 'tagName');
+ * tagNames.subscribe(x => console.log(x));
+ *
+ * @see {@link map}
+ *
+ * @param {...string} properties The nested properties to pluck from each source
+ * value (an object).
+ * @return {Observable} A new Observable of property values from the source values.
+ * @method pluck
+ * @owner Observable
+ */
+function pluck() {
+    var properties = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        properties[_i - 0] = arguments[_i];
+    }
+    return __WEBPACK_IMPORTED_MODULE_0__operators_pluck__["a" /* pluck */].apply(void 0, properties)(this);
+}
+//# sourceMappingURL=pluck.js.map 
+
+
+/***/ }),
+
 /***/ "../../../../rxjs/_esm5/operator/reduce.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3484,6 +4604,63 @@ function reduce(accumulator, seed) {
 
 /***/ }),
 
+/***/ "../../../../rxjs/_esm5/operator/scan.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = scan;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_scan__ = __webpack_require__("../../../../rxjs/_esm5/operators/scan.js");
+/** PURE_IMPORTS_START .._operators_scan PURE_IMPORTS_END */
+
+/* tslint:enable:max-line-length */
+/**
+ * Applies an accumulator function over the source Observable, and returns each
+ * intermediate result, with an optional seed value.
+ *
+ * <span class="informal">It's like {@link reduce}, but emits the current
+ * accumulation whenever the source emits a value.</span>
+ *
+ * <img src="./img/scan.png" width="100%">
+ *
+ * Combines together all values emitted on the source, using an accumulator
+ * function that knows how to join a new source value into the accumulation from
+ * the past. Is similar to {@link reduce}, but emits the intermediate
+ * accumulations.
+ *
+ * Returns an Observable that applies a specified `accumulator` function to each
+ * item emitted by the source Observable. If a `seed` value is specified, then
+ * that value will be used as the initial value for the accumulator. If no seed
+ * value is specified, the first item of the source is used as the seed.
+ *
+ * @example <caption>Count the number of click events</caption>
+ * var clicks = Rx.Observable.fromEvent(document, 'click');
+ * var ones = clicks.mapTo(1);
+ * var seed = 0;
+ * var count = ones.scan((acc, one) => acc + one, seed);
+ * count.subscribe(x => console.log(x));
+ *
+ * @see {@link expand}
+ * @see {@link mergeScan}
+ * @see {@link reduce}
+ *
+ * @param {function(acc: R, value: T, index: number): R} accumulator
+ * The accumulator function called on each source value.
+ * @param {T|R} [seed] The initial accumulation value.
+ * @return {Observable<R>} An observable of the accumulated values.
+ * @method scan
+ * @owner Observable
+ */
+function scan(accumulator, seed) {
+    if (arguments.length >= 2) {
+        return Object(__WEBPACK_IMPORTED_MODULE_0__operators_scan__["a" /* scan */])(accumulator, seed)(this);
+    }
+    return Object(__WEBPACK_IMPORTED_MODULE_0__operators_scan__["a" /* scan */])(accumulator)(this);
+}
+//# sourceMappingURL=scan.js.map 
+
+
+/***/ }),
+
 /***/ "../../../../rxjs/_esm5/operator/share.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3513,6 +4690,65 @@ function share() {
 }
 ;
 //# sourceMappingURL=share.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operator/withLatestFrom.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = withLatestFrom;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_withLatestFrom__ = __webpack_require__("../../../../rxjs/_esm5/operators/withLatestFrom.js");
+/** PURE_IMPORTS_START .._operators_withLatestFrom PURE_IMPORTS_END */
+
+/* tslint:enable:max-line-length */
+/**
+ * Combines the source Observable with other Observables to create an Observable
+ * whose values are calculated from the latest values of each, only when the
+ * source emits.
+ *
+ * <span class="informal">Whenever the source Observable emits a value, it
+ * computes a formula using that value plus the latest values from other input
+ * Observables, then emits the output of that formula.</span>
+ *
+ * <img src="./img/withLatestFrom.png" width="100%">
+ *
+ * `withLatestFrom` combines each value from the source Observable (the
+ * instance) with the latest values from the other input Observables only when
+ * the source emits a value, optionally using a `project` function to determine
+ * the value to be emitted on the output Observable. All input Observables must
+ * emit at least one value before the output Observable will emit a value.
+ *
+ * @example <caption>On every click event, emit an array with the latest timer event plus the click event</caption>
+ * var clicks = Rx.Observable.fromEvent(document, 'click');
+ * var timer = Rx.Observable.interval(1000);
+ * var result = clicks.withLatestFrom(timer);
+ * result.subscribe(x => console.log(x));
+ *
+ * @see {@link combineLatest}
+ *
+ * @param {ObservableInput} other An input Observable to combine with the source
+ * Observable. More than one input Observables may be given as argument.
+ * @param {Function} [project] Projection function for combining values
+ * together. Receives all values in order of the Observables passed, where the
+ * first parameter is a value from the source Observable. (e.g.
+ * `a.withLatestFrom(b, c, (a1, b1, c1) => a1 + b1 + c1)`). If this is not
+ * passed, arrays will be emitted on the output Observable.
+ * @return {Observable} An Observable of projected values from the most recent
+ * values from each input Observable, or an array of the most recent values from
+ * each input Observable.
+ * @method withLatestFrom
+ * @owner Observable
+ */
+function withLatestFrom() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i - 0] = arguments[_i];
+    }
+    return __WEBPACK_IMPORTED_MODULE_0__operators_withLatestFrom__["a" /* withLatestFrom */].apply(void 0, args)(this);
+}
+//# sourceMappingURL=withLatestFrom.js.map 
 
 
 /***/ }),
@@ -3871,6 +5107,127 @@ var DefaultIfEmptySubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
     return DefaultIfEmptySubscriber;
 }(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
 //# sourceMappingURL=defaultIfEmpty.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operators/distinctUntilChanged.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = distinctUntilChanged;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Subscriber__ = __webpack_require__("../../../../rxjs/_esm5/Subscriber.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_tryCatch__ = __webpack_require__("../../../../rxjs/_esm5/util/tryCatch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_errorObject__ = __webpack_require__("../../../../rxjs/_esm5/util/errorObject.js");
+/** PURE_IMPORTS_START .._Subscriber,.._util_tryCatch,.._util_errorObject PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+/* tslint:enable:max-line-length */
+/**
+ * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
+ *
+ * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
+ *
+ * If a comparator function is not provided, an equality check is used by default.
+ *
+ * @example <caption>A simple example with numbers</caption>
+ * Observable.of(1, 1, 2, 2, 2, 1, 1, 2, 3, 3, 4)
+ *   .distinctUntilChanged()
+ *   .subscribe(x => console.log(x)); // 1, 2, 1, 2, 3, 4
+ *
+ * @example <caption>An example using a compare function</caption>
+ * interface Person {
+ *    age: number,
+ *    name: string
+ * }
+ *
+ * Observable.of<Person>(
+ *     { age: 4, name: 'Foo'},
+ *     { age: 7, name: 'Bar'},
+ *     { age: 5, name: 'Foo'})
+ *     { age: 6, name: 'Foo'})
+ *     .distinctUntilChanged((p: Person, q: Person) => p.name === q.name)
+ *     .subscribe(x => console.log(x));
+ *
+ * // displays:
+ * // { age: 4, name: 'Foo' }
+ * // { age: 7, name: 'Bar' }
+ * // { age: 5, name: 'Foo' }
+ *
+ * @see {@link distinct}
+ * @see {@link distinctUntilKeyChanged}
+ *
+ * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
+ * @return {Observable} An Observable that emits items from the source Observable with distinct values.
+ * @method distinctUntilChanged
+ * @owner Observable
+ */
+function distinctUntilChanged(compare, keySelector) {
+    return function (source) { return source.lift(new DistinctUntilChangedOperator(compare, keySelector)); };
+}
+var DistinctUntilChangedOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
+    function DistinctUntilChangedOperator(compare, keySelector) {
+        this.compare = compare;
+        this.keySelector = keySelector;
+    }
+    DistinctUntilChangedOperator.prototype.call = function (subscriber, source) {
+        return source.subscribe(new DistinctUntilChangedSubscriber(subscriber, this.compare, this.keySelector));
+    };
+    return DistinctUntilChangedOperator;
+}());
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var DistinctUntilChangedSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(DistinctUntilChangedSubscriber, _super);
+    function DistinctUntilChangedSubscriber(destination, compare, keySelector) {
+        _super.call(this, destination);
+        this.keySelector = keySelector;
+        this.hasKey = false;
+        if (typeof compare === 'function') {
+            this.compare = compare;
+        }
+    }
+    DistinctUntilChangedSubscriber.prototype.compare = function (x, y) {
+        return x === y;
+    };
+    DistinctUntilChangedSubscriber.prototype._next = function (value) {
+        var keySelector = this.keySelector;
+        var key = value;
+        if (keySelector) {
+            key = Object(__WEBPACK_IMPORTED_MODULE_1__util_tryCatch__["a" /* tryCatch */])(this.keySelector)(value);
+            if (key === __WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */]) {
+                return this.destination.error(__WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */].e);
+            }
+        }
+        var result = false;
+        if (this.hasKey) {
+            result = Object(__WEBPACK_IMPORTED_MODULE_1__util_tryCatch__["a" /* tryCatch */])(this.compare)(this.key, key);
+            if (result === __WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */]) {
+                return this.destination.error(__WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */].e);
+            }
+        }
+        else {
+            this.hasKey = true;
+        }
+        if (Boolean(result) === false) {
+            this.key = key;
+            this.destination.next(value);
+        }
+    };
+    return DistinctUntilChangedSubscriber;
+}(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
+//# sourceMappingURL=distinctUntilChanged.js.map 
 
 
 /***/ }),
@@ -4788,7 +6145,7 @@ var MulticastOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export observeOn */
+/* harmony export (immutable) */ __webpack_exports__["b"] = observeOn;
 /* unused harmony export ObserveOnOperator */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ObserveOnSubscriber; });
 /* unused harmony export ObserveOnMessage */
@@ -4913,6 +6270,72 @@ var ObserveOnMessage = /*@__PURE__*/ (/*@__PURE__*/ function () {
     return ObserveOnMessage;
 }());
 //# sourceMappingURL=observeOn.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operators/pluck.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = pluck;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__map__ = __webpack_require__("../../../../rxjs/_esm5/operators/map.js");
+/** PURE_IMPORTS_START ._map PURE_IMPORTS_END */
+
+/**
+ * Maps each source value (an object) to its specified nested property.
+ *
+ * <span class="informal">Like {@link map}, but meant only for picking one of
+ * the nested properties of every emitted object.</span>
+ *
+ * <img src="./img/pluck.png" width="100%">
+ *
+ * Given a list of strings describing a path to an object property, retrieves
+ * the value of a specified nested property from all values in the source
+ * Observable. If a property can't be resolved, it will return `undefined` for
+ * that value.
+ *
+ * @example <caption>Map every click to the tagName of the clicked target element</caption>
+ * var clicks = Rx.Observable.fromEvent(document, 'click');
+ * var tagNames = clicks.pluck('target', 'tagName');
+ * tagNames.subscribe(x => console.log(x));
+ *
+ * @see {@link map}
+ *
+ * @param {...string} properties The nested properties to pluck from each source
+ * value (an object).
+ * @return {Observable} A new Observable of property values from the source values.
+ * @method pluck
+ * @owner Observable
+ */
+function pluck() {
+    var properties = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        properties[_i - 0] = arguments[_i];
+    }
+    var length = properties.length;
+    if (length === 0) {
+        throw new Error('list of properties cannot be empty.');
+    }
+    return function (source) { return Object(__WEBPACK_IMPORTED_MODULE_0__map__["a" /* map */])(plucker(properties, length))(source); };
+}
+function plucker(props, length) {
+    var mapper = function (x) {
+        var currentProp = x;
+        for (var i = 0; i < length; i++) {
+            var p = currentProp[props[i]];
+            if (typeof p !== 'undefined') {
+                currentProp = p;
+            }
+            else {
+                return undefined;
+            }
+        }
+        return currentProp;
+    };
+    return mapper;
+}
+//# sourceMappingURL=pluck.js.map 
 
 
 /***/ }),
@@ -5382,6 +6805,597 @@ var TakeLastSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
     return TakeLastSubscriber;
 }(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
 //# sourceMappingURL=takeLast.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operators/withLatestFrom.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = withLatestFrom;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OuterSubscriber__ = __webpack_require__("../../../../rxjs/_esm5/OuterSubscriber.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_subscribeToResult__ = __webpack_require__("../../../../rxjs/_esm5/util/subscribeToResult.js");
+/** PURE_IMPORTS_START .._OuterSubscriber,.._util_subscribeToResult PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+/* tslint:enable:max-line-length */
+/**
+ * Combines the source Observable with other Observables to create an Observable
+ * whose values are calculated from the latest values of each, only when the
+ * source emits.
+ *
+ * <span class="informal">Whenever the source Observable emits a value, it
+ * computes a formula using that value plus the latest values from other input
+ * Observables, then emits the output of that formula.</span>
+ *
+ * <img src="./img/withLatestFrom.png" width="100%">
+ *
+ * `withLatestFrom` combines each value from the source Observable (the
+ * instance) with the latest values from the other input Observables only when
+ * the source emits a value, optionally using a `project` function to determine
+ * the value to be emitted on the output Observable. All input Observables must
+ * emit at least one value before the output Observable will emit a value.
+ *
+ * @example <caption>On every click event, emit an array with the latest timer event plus the click event</caption>
+ * var clicks = Rx.Observable.fromEvent(document, 'click');
+ * var timer = Rx.Observable.interval(1000);
+ * var result = clicks.withLatestFrom(timer);
+ * result.subscribe(x => console.log(x));
+ *
+ * @see {@link combineLatest}
+ *
+ * @param {ObservableInput} other An input Observable to combine with the source
+ * Observable. More than one input Observables may be given as argument.
+ * @param {Function} [project] Projection function for combining values
+ * together. Receives all values in order of the Observables passed, where the
+ * first parameter is a value from the source Observable. (e.g.
+ * `a.withLatestFrom(b, c, (a1, b1, c1) => a1 + b1 + c1)`). If this is not
+ * passed, arrays will be emitted on the output Observable.
+ * @return {Observable} An Observable of projected values from the most recent
+ * values from each input Observable, or an array of the most recent values from
+ * each input Observable.
+ * @method withLatestFrom
+ * @owner Observable
+ */
+function withLatestFrom() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i - 0] = arguments[_i];
+    }
+    return function (source) {
+        var project;
+        if (typeof args[args.length - 1] === 'function') {
+            project = args.pop();
+        }
+        var observables = args;
+        return source.lift(new WithLatestFromOperator(observables, project));
+    };
+}
+var WithLatestFromOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
+    function WithLatestFromOperator(observables, project) {
+        this.observables = observables;
+        this.project = project;
+    }
+    WithLatestFromOperator.prototype.call = function (subscriber, source) {
+        return source.subscribe(new WithLatestFromSubscriber(subscriber, this.observables, this.project));
+    };
+    return WithLatestFromOperator;
+}());
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var WithLatestFromSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(WithLatestFromSubscriber, _super);
+    function WithLatestFromSubscriber(destination, observables, project) {
+        _super.call(this, destination);
+        this.observables = observables;
+        this.project = project;
+        this.toRespond = [];
+        var len = observables.length;
+        this.values = new Array(len);
+        for (var i = 0; i < len; i++) {
+            this.toRespond.push(i);
+        }
+        for (var i = 0; i < len; i++) {
+            var observable = observables[i];
+            this.add(Object(__WEBPACK_IMPORTED_MODULE_1__util_subscribeToResult__["a" /* subscribeToResult */])(this, observable, observable, i));
+        }
+    }
+    WithLatestFromSubscriber.prototype.notifyNext = function (outerValue, innerValue, outerIndex, innerIndex, innerSub) {
+        this.values[outerIndex] = innerValue;
+        var toRespond = this.toRespond;
+        if (toRespond.length > 0) {
+            var found = toRespond.indexOf(outerIndex);
+            if (found !== -1) {
+                toRespond.splice(found, 1);
+            }
+        }
+    };
+    WithLatestFromSubscriber.prototype.notifyComplete = function () {
+        // noop
+    };
+    WithLatestFromSubscriber.prototype._next = function (value) {
+        if (this.toRespond.length === 0) {
+            var args = [value].concat(this.values);
+            if (this.project) {
+                this._tryProject(args);
+            }
+            else {
+                this.destination.next(args);
+            }
+        }
+    };
+    WithLatestFromSubscriber.prototype._tryProject = function (args) {
+        var result;
+        try {
+            result = this.project.apply(this, args);
+        }
+        catch (err) {
+            this.destination.error(err);
+            return;
+        }
+        this.destination.next(result);
+    };
+    return WithLatestFromSubscriber;
+}(__WEBPACK_IMPORTED_MODULE_0__OuterSubscriber__["a" /* OuterSubscriber */]));
+//# sourceMappingURL=withLatestFrom.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/scheduler/Action.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Action; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Subscription__ = __webpack_require__("../../../../rxjs/_esm5/Subscription.js");
+/** PURE_IMPORTS_START .._Subscription PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+/**
+ * A unit of work to be executed in a {@link Scheduler}. An action is typically
+ * created from within a Scheduler and an RxJS user does not need to concern
+ * themselves about creating and manipulating an Action.
+ *
+ * ```ts
+ * class Action<T> extends Subscription {
+ *   new (scheduler: Scheduler, work: (state?: T) => void);
+ *   schedule(state?: T, delay: number = 0): Subscription;
+ * }
+ * ```
+ *
+ * @class Action<T>
+ */
+var Action = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(Action, _super);
+    function Action(scheduler, work) {
+        _super.call(this);
+    }
+    /**
+     * Schedules this action on its parent Scheduler for execution. May be passed
+     * some context object, `state`. May happen at some point in the future,
+     * according to the `delay` parameter, if specified.
+     * @param {T} [state] Some contextual data that the `work` function uses when
+     * called by the Scheduler.
+     * @param {number} [delay] Time to wait before executing the work, where the
+     * time unit is implicit and defined by the Scheduler.
+     * @return {void}
+     */
+    Action.prototype.schedule = function (state, delay) {
+        if (delay === void 0) {
+            delay = 0;
+        }
+        return this;
+    };
+    return Action;
+}(__WEBPACK_IMPORTED_MODULE_0__Subscription__["a" /* Subscription */]));
+//# sourceMappingURL=Action.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/scheduler/AsyncAction.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AsyncAction; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_root__ = __webpack_require__("../../../../rxjs/_esm5/util/root.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Action__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/Action.js");
+/** PURE_IMPORTS_START .._util_root,._Action PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var AsyncAction = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(AsyncAction, _super);
+    function AsyncAction(scheduler, work) {
+        _super.call(this, scheduler, work);
+        this.scheduler = scheduler;
+        this.work = work;
+        this.pending = false;
+    }
+    AsyncAction.prototype.schedule = function (state, delay) {
+        if (delay === void 0) {
+            delay = 0;
+        }
+        if (this.closed) {
+            return this;
+        }
+        // Always replace the current state with the new state.
+        this.state = state;
+        // Set the pending flag indicating that this action has been scheduled, or
+        // has recursively rescheduled itself.
+        this.pending = true;
+        var id = this.id;
+        var scheduler = this.scheduler;
+        //
+        // Important implementation note:
+        //
+        // Actions only execute once by default, unless rescheduled from within the
+        // scheduled callback. This allows us to implement single and repeat
+        // actions via the same code path, without adding API surface area, as well
+        // as mimic traditional recursion but across asynchronous boundaries.
+        //
+        // However, JS runtimes and timers distinguish between intervals achieved by
+        // serial `setTimeout` calls vs. a single `setInterval` call. An interval of
+        // serial `setTimeout` calls can be individually delayed, which delays
+        // scheduling the next `setTimeout`, and so on. `setInterval` attempts to
+        // guarantee the interval callback will be invoked more precisely to the
+        // interval period, regardless of load.
+        //
+        // Therefore, we use `setInterval` to schedule single and repeat actions.
+        // If the action reschedules itself with the same delay, the interval is not
+        // canceled. If the action doesn't reschedule, or reschedules with a
+        // different delay, the interval will be canceled after scheduled callback
+        // execution.
+        //
+        if (id != null) {
+            this.id = this.recycleAsyncId(scheduler, id, delay);
+        }
+        this.delay = delay;
+        // If this action has already an async Id, don't request a new one.
+        this.id = this.id || this.requestAsyncId(scheduler, this.id, delay);
+        return this;
+    };
+    AsyncAction.prototype.requestAsyncId = function (scheduler, id, delay) {
+        if (delay === void 0) {
+            delay = 0;
+        }
+        return __WEBPACK_IMPORTED_MODULE_0__util_root__["a" /* root */].setInterval(scheduler.flush.bind(scheduler, this), delay);
+    };
+    AsyncAction.prototype.recycleAsyncId = function (scheduler, id, delay) {
+        if (delay === void 0) {
+            delay = 0;
+        }
+        // If this action is rescheduled with the same delay time, don't clear the interval id.
+        if (delay !== null && this.delay === delay && this.pending === false) {
+            return id;
+        }
+        // Otherwise, if the action's delay time is different from the current delay,
+        // or the action has been rescheduled before it's executed, clear the interval id
+        return __WEBPACK_IMPORTED_MODULE_0__util_root__["a" /* root */].clearInterval(id) && undefined || undefined;
+    };
+    /**
+     * Immediately executes this action and the `work` it contains.
+     * @return {any}
+     */
+    AsyncAction.prototype.execute = function (state, delay) {
+        if (this.closed) {
+            return new Error('executing a cancelled action');
+        }
+        this.pending = false;
+        var error = this._execute(state, delay);
+        if (error) {
+            return error;
+        }
+        else if (this.pending === false && this.id != null) {
+            // Dequeue if the action didn't reschedule itself. Don't call
+            // unsubscribe(), because the action could reschedule later.
+            // For example:
+            // ```
+            // scheduler.schedule(function doWork(counter) {
+            //   /* ... I'm a busy worker bee ... */
+            //   var originalAction = this;
+            //   /* wait 100ms before rescheduling the action */
+            //   setTimeout(function () {
+            //     originalAction.schedule(counter + 1);
+            //   }, 100);
+            // }, 1000);
+            // ```
+            this.id = this.recycleAsyncId(this.scheduler, this.id, null);
+        }
+    };
+    AsyncAction.prototype._execute = function (state, delay) {
+        var errored = false;
+        var errorValue = undefined;
+        try {
+            this.work(state);
+        }
+        catch (e) {
+            errored = true;
+            errorValue = !!e && e || new Error(e);
+        }
+        if (errored) {
+            this.unsubscribe();
+            return errorValue;
+        }
+    };
+    AsyncAction.prototype._unsubscribe = function () {
+        var id = this.id;
+        var scheduler = this.scheduler;
+        var actions = scheduler.actions;
+        var index = actions.indexOf(this);
+        this.work = null;
+        this.state = null;
+        this.pending = false;
+        this.scheduler = null;
+        if (index !== -1) {
+            actions.splice(index, 1);
+        }
+        if (id != null) {
+            this.id = this.recycleAsyncId(scheduler, id, null);
+        }
+        this.delay = null;
+    };
+    return AsyncAction;
+}(__WEBPACK_IMPORTED_MODULE_1__Action__["a" /* Action */]));
+//# sourceMappingURL=AsyncAction.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/scheduler/AsyncScheduler.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AsyncScheduler; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Scheduler__ = __webpack_require__("../../../../rxjs/_esm5/Scheduler.js");
+/** PURE_IMPORTS_START .._Scheduler PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+var AsyncScheduler = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(AsyncScheduler, _super);
+    function AsyncScheduler() {
+        _super.apply(this, arguments);
+        this.actions = [];
+        /**
+         * A flag to indicate whether the Scheduler is currently executing a batch of
+         * queued actions.
+         * @type {boolean}
+         */
+        this.active = false;
+        /**
+         * An internal ID used to track the latest asynchronous task such as those
+         * coming from `setTimeout`, `setInterval`, `requestAnimationFrame`, and
+         * others.
+         * @type {any}
+         */
+        this.scheduled = undefined;
+    }
+    AsyncScheduler.prototype.flush = function (action) {
+        var actions = this.actions;
+        if (this.active) {
+            actions.push(action);
+            return;
+        }
+        var error;
+        this.active = true;
+        do {
+            if (error = action.execute(action.state, action.delay)) {
+                break;
+            }
+        } while (action = actions.shift()); // exhaust the scheduler queue
+        this.active = false;
+        if (error) {
+            while (action = actions.shift()) {
+                action.unsubscribe();
+            }
+            throw error;
+        }
+    };
+    return AsyncScheduler;
+}(__WEBPACK_IMPORTED_MODULE_0__Scheduler__["a" /* Scheduler */]));
+//# sourceMappingURL=AsyncScheduler.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/scheduler/QueueAction.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QueueAction; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AsyncAction__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/AsyncAction.js");
+/** PURE_IMPORTS_START ._AsyncAction PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var QueueAction = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(QueueAction, _super);
+    function QueueAction(scheduler, work) {
+        _super.call(this, scheduler, work);
+        this.scheduler = scheduler;
+        this.work = work;
+    }
+    QueueAction.prototype.schedule = function (state, delay) {
+        if (delay === void 0) {
+            delay = 0;
+        }
+        if (delay > 0) {
+            return _super.prototype.schedule.call(this, state, delay);
+        }
+        this.delay = delay;
+        this.state = state;
+        this.scheduler.flush(this);
+        return this;
+    };
+    QueueAction.prototype.execute = function (state, delay) {
+        return (delay > 0 || this.closed) ?
+            _super.prototype.execute.call(this, state, delay) :
+            this._execute(state, delay);
+    };
+    QueueAction.prototype.requestAsyncId = function (scheduler, id, delay) {
+        if (delay === void 0) {
+            delay = 0;
+        }
+        // If delay exists and is greater than 0, or if the delay is null (the
+        // action wasn't rescheduled) but was originally scheduled as an async
+        // action, then recycle as an async action.
+        if ((delay !== null && delay > 0) || (delay === null && this.delay > 0)) {
+            return _super.prototype.requestAsyncId.call(this, scheduler, id, delay);
+        }
+        // Otherwise flush the scheduler starting with this action.
+        return scheduler.flush(this);
+    };
+    return QueueAction;
+}(__WEBPACK_IMPORTED_MODULE_0__AsyncAction__["a" /* AsyncAction */]));
+//# sourceMappingURL=QueueAction.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/scheduler/QueueScheduler.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QueueScheduler; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AsyncScheduler__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/AsyncScheduler.js");
+/** PURE_IMPORTS_START ._AsyncScheduler PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+var QueueScheduler = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(QueueScheduler, _super);
+    function QueueScheduler() {
+        _super.apply(this, arguments);
+    }
+    return QueueScheduler;
+}(__WEBPACK_IMPORTED_MODULE_0__AsyncScheduler__["a" /* AsyncScheduler */]));
+//# sourceMappingURL=QueueScheduler.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/scheduler/queue.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return queue; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__QueueAction__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/QueueAction.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__QueueScheduler__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/QueueScheduler.js");
+/** PURE_IMPORTS_START ._QueueAction,._QueueScheduler PURE_IMPORTS_END */
+
+
+/**
+ *
+ * Queue Scheduler
+ *
+ * <span class="informal">Put every next task on a queue, instead of executing it immediately</span>
+ *
+ * `queue` scheduler, when used with delay, behaves the same as {@link async} scheduler.
+ *
+ * When used without delay, it schedules given task synchronously - executes it right when
+ * it is scheduled. However when called recursively, that is when inside the scheduled task,
+ * another task is scheduled with queue scheduler, instead of executing immediately as well,
+ * that task will be put on a queue and wait for current one to finish.
+ *
+ * This means that when you execute task with `queue` scheduler, you are sure it will end
+ * before any other task scheduled with that scheduler will start.
+ *
+ * @examples <caption>Schedule recursively first, then do something</caption>
+ *
+ * Rx.Scheduler.queue.schedule(() => {
+ *   Rx.Scheduler.queue.schedule(() => console.log('second')); // will not happen now, but will be put on a queue
+ *
+ *   console.log('first');
+ * });
+ *
+ * // Logs:
+ * // "first"
+ * // "second"
+ *
+ *
+ * @example <caption>Reschedule itself recursively</caption>
+ *
+ * Rx.Scheduler.queue.schedule(function(state) {
+ *   if (state !== 0) {
+ *     console.log('before', state);
+ *     this.schedule(state - 1); // `this` references currently executing Action,
+ *                               // which we reschedule with new state
+ *     console.log('after', state);
+ *   }
+ * }, 0, 3);
+ *
+ * // In scheduler that runs recursively, you would expect:
+ * // "before", 3
+ * // "before", 2
+ * // "before", 1
+ * // "after", 1
+ * // "after", 2
+ * // "after", 3
+ *
+ * // But with queue it logs:
+ * // "before", 3
+ * // "after", 3
+ * // "before", 2
+ * // "after", 2
+ * // "before", 1
+ * // "after", 1
+ *
+ *
+ * @static true
+ * @name queue
+ * @owner Scheduler
+ */
+var queue = /*@__PURE__*/ new __WEBPACK_IMPORTED_MODULE_1__QueueScheduler__["a" /* QueueScheduler */](__WEBPACK_IMPORTED_MODULE_0__QueueAction__["a" /* QueueAction */]);
+//# sourceMappingURL=queue.js.map 
 
 
 /***/ }),

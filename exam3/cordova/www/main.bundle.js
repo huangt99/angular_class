@@ -90,12 +90,16 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__herodetail_herodetail_component__ = __webpack_require__("../../../../../src/app/herodetail/herodetail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__highlight_directive__ = __webpack_require__("../../../../../src/app/highlight.directive.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__hero_service__ = __webpack_require__("../../../../../src/app/hero.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/@ngrx/store.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__reducers_counter__ = __webpack_require__("../../../../../src/app/reducers/counter.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -130,7 +134,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(appRoutes)
+                __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
+                __WEBPACK_IMPORTED_MODULE_12__ngrx_store__["b" /* StoreModule */].forRoot({ counter: __WEBPACK_IMPORTED_MODULE_13__reducers_counter__["a" /* counterReducer */] }) // state, reducer
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_11__hero_service__["a" /* HeroService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
@@ -206,7 +211,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/herochild/herochild.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p *ngIf=\"toHighlight\" appHighlight>\n{{name}} -- <a routerLink=\"/hero/{{index}}\">{{index}}</a>: <button (click)=\"vote('name')\">Vote</button>\n</p>\n<p *ngIf=\"toHighlight===false\" >\n  {{name}} -- <a routerLink=\"/hero/{{index}}\">{{index}}</a>: <button (click)=\"vote('name')\">Vote</button>\n </p>\n"
+module.exports = "<p *ngIf=\"toHighlight\" appHighlight>\n{{name}} -- <a routerLink=\"/hero/{{index}}\">{{index}}</a>: <button (click)=\"vote('name')\">Vote</button>\n</p>\n<p *ngIf=\"toHighlight===false\" >\n  {{name}} -- <a routerLink=\"/hero/{{index}}\">{{index}}</a>: <button (click)=\"vote('name')\">Vote</button>\n </p>\n\n \n<div>Increase/Descrease Count: {{ counter$ | async }}\n <button (click)=\"increment()\">Increment</button>\n <button (click)=\"decrement()\">Decrement</button> \n\n</div>  "
 
 /***/ }),
 
@@ -216,6 +221,7 @@ module.exports = "<p *ngIf=\"toHighlight\" appHighlight>\n{{name}} -- <a routerL
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HerochildComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/@ngrx/store.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -226,10 +232,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var HerochildComponent = /** @class */ (function () {
-    function HerochildComponent() {
+    function HerochildComponent(store) {
+        this.store = store;
         this.onVoted = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        // sets it to reference in store, selecting state 'counter'
+        this.counter$ = this.store.select('counter');
     }
+    HerochildComponent.prototype.increment = function () {
+        this.store.dispatch({ type: 'INCREMENT' });
+    };
+    HerochildComponent.prototype.decrement = function () {
+        this.store.dispatch({ type: 'DECREMENT' });
+    };
     HerochildComponent.prototype.vote = function (voteName) {
         this.onVoted.emit(voteName);
         console.log("Voted " + voteName + ":" + this.name);
@@ -259,7 +275,7 @@ var HerochildComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/herochild/herochild.component.html"),
             styles: [__webpack_require__("../../../../../src/app/herochild/herochild.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_store__["a" /* Store */]])
     ], HerochildComponent);
     return HerochildComponent;
 }());
@@ -454,7 +470,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/heroparent/heroparent.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>Votes: {{voteCount}}</div>\n<app-herochild *ngFor=\"let hero of heroes;let i = index\" [name]=\"hero.name\" [index]=\"i\" (onVoted)=\"onVoted($event)\">\n</app-herochild>\n"
+module.exports = "<div>Votes: {{voteCount}}</div>\n<app-herochild *ngFor=\"let hero of heroes;let i = index\" [name]=\"hero.name\" [index]=\"i\" (onVoted)=\"onVoted($event)\">\n</app-herochild>\n\n\n\n<div>Increase/Descrease Count: {{ counter$ | async }}</div>"
 
 /***/ }),
 
@@ -543,6 +559,26 @@ var HighlightDirective = /** @class */ (function () {
     return HighlightDirective;
 }());
 
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/reducers/counter.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return counterReducer; });
+var counterReducer = function (state, action) {
+    if (state === void 0) { state = 0; }
+    switch (action.type) {
+        case 'INCREMENT':
+            return state + 1;
+        case 'DECREMENT':
+            return state - 1;
+        default:
+            return state;
+    }
+};
 
 
 /***/ }),
