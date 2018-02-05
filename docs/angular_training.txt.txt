@@ -19,6 +19,15 @@ ng g component button
 ng g service data
 ng g directive validate
 ng g module common
+--lint the code
+ng lint  
+
+ng generate service hero --module=app 
+
+
+sprestonn@icct.com
+EDOWNEY@icct.com
+
 
 --es6
 
@@ -41,3 +50,27 @@ Chrome debug command line: "C:\Program Files (x86)\Google\Chrome\Application\chr
 --http server
 npm install http-server -g
 http-server -o (node_modules/http-server/bin/http-server -o)
+
+--fix the permission issue:
+https://docs.npmjs.com/getting-started/fixing-npm-permissions
+
+    mkdir ~/.npm-global
+    npm config set prefix '~/.npm-global'
+
+    --Open or create a ~/.profile file and add this line:
+    PATH=~/.npm-global/bin:$PATH
+    source ~/.profile
+    npm install -g jshint
+
+VS Code extensions:
+Agular template formmatter
+Beautify css/sassscss/less
+Debugger for chrome
+Typescript hero
+XML formmatter
+
+
+ng serve --proxy-config proxy.conf.json
+
+--Rest client:
+https://www.npmjs.com/package/angular-rest-client
