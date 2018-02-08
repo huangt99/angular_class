@@ -1,0 +1,12 @@
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/hero/{{hero.uuid | encodedString}}">
+            {{hero.realName}}
+        </a>
+        <button class="delete" (click)="delete(hero)">x</button>
+    </li>
+</ul>
+<div *ngIf="lastModifiedHero != undefined;">
+    <label for="lastHero">Last Modified Hero:{{lastModifiedHero.realName }}
+    </label>
+  </div>

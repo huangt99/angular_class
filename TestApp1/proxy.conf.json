@@ -1,0 +1,20 @@
+{
+  "/api/*": {
+    "target": "https://uhfxxujepg.execute-api.us-east-1.amazonaws.com/dev",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/group/*": {
+    "target": "https://3c52fab9ag.execute-api.us-east-1.amazonaws.com/dev",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/group": ""
+    }
+  }
+}
