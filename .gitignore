@@ -6,6 +6,11 @@
 **/tmp
 **/out-tsc
 
+# cordova
+**/platforms
+**/plugins
+**/cordova/res
+
 # dependencies
 **/node_modules
 
