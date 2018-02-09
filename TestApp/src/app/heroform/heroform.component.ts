@@ -20,6 +20,9 @@ export class HeroformComponent implements OnInit {
     private store: Store<AppState>) {
   }
 
+  groupKeys:string[] = Object.keys(HeroGroupEnum);
+  groupAll = HeroGroupEnum;
+
   lastModifiedHero: Hero;
   isLoaded = false;
   model = new Hero();
@@ -63,4 +66,11 @@ export class HeroformComponent implements OnInit {
   {
     this.router.navigateByUrl('/skill/'+hero.uuid);
   }
+}
+
+export enum HeroGroupEnum {
+  avenger = "Avengers",
+  xmen="X-men",
+  local="Local",
+  columbus="Columbus  Heros"
 }

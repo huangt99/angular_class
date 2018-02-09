@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class Hero
 {
-    constructor(public groups?:String[], public abilities?: HeroAbilities, public realName?: string, public s3ImageUrl?: string,
+    constructor(public groups?:string[], public abilities?: HeroAbilities, public realName?: string, public s3ImageUrl?: string,
         public powers?: string, public uuid?:string, public heroName?: string, public signedAccords?: string)
     {
         if(groups == null)
@@ -16,9 +16,8 @@ export class Hero
         {
             this.abilities = new HeroAbilities(1,2,3,4,5,6);
         }
-    }
 
+     }
 }
-
 
 

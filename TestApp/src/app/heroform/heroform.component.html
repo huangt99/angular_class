@@ -1,59 +1,80 @@
 <div>
   <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-    <div>
-      <label for="realName">Real Name</label>
-      <input type="text" required minlength="4" [(ngModel)]="model.realName" name="realName" #realName="ngModel">
+      <table><tr>
+      <td><label for="realName">Real Name</label></td>
+      <td><input type="text" required minlength="4" [(ngModel)]="model.realName" name="realName" #realName="ngModel">
       <div [hidden]="realName.valid || realName.pristine" class="alert alert-danger">
         Name is required
       </div>
-    </div>
+    </td>
+    </tr>
+    <tr>
+        <td> <label for="groups">Groups</label></td>
+        <td> <label *ngFor="let key of groupKeys;let i = index">
+             
+          <input 
+              type="checkbox"
+              [(ngModel)]="model.groups[i]"
+              checked >
+            {{groupAll[key]}} &nbsp;&nbsp;
+          </label>        
+        </td>
+        </tr>
+      
 
-    <div>
-      <label for="s3ImageUrl">Image Url</label>
-      <input type="text" [(ngModel)]="model.s3ImageUrl" name="s3ImageUrl" #s3ImageUrl="ngModel">
-    </div>
+    <tr><td>
+      <label for="s3ImageUrl">Image Url</label></td>
+      <td><input type="text" [(ngModel)]="model.s3ImageUrl" name="s3ImageUrl" #s3ImageUrl="ngModel"></td>
+    </tr>
 
-    <div>
-      <label for="uuid">UUID</label>
-      <input type="text" required minlength="4" [(ngModel)]="model.uuid" name="uuid" #uuid="ngModel">
+    <tr><td>
+      <label for="uuid">UUID</label></td>
+      <td><input type="text" required minlength="4" [(ngModel)]="model.uuid" name="uuid" #uuid="ngModel">
       <div [hidden]="uuid.valid || uuid.pristine" class="alert alert-danger">
         UUID is required
-      </div>
-    </div>
+      </div></td>
+    </tr>
 
-    <div>
-      <label for="powers">Powers</label>
-      <input type="text" [(ngModel)]="model.powers" name="powers" #powers="ngModel">
-    </div>
+    <tr><td>
+      <label for="powers">Powers</label></td>
+      <td><input type="text" [(ngModel)]="model.powers" name="powers" #powers="ngModel"></td>
+    </tr>
 
-    <div>
-      <label for="heroName">Hero Name</label>
-      <input type="text" required minlength="4" [(ngModel)]="model.heroName" name="heroName" #heroName="ngModel">
+    <tr><td>
+      <label for="heroName">Hero Name</label></td>
+      <td><input type="text" required minlength="4" [(ngModel)]="model.heroName" name="heroName" #heroName="ngModel">
       <div [hidden]="heroName.valid || heroName.pristine" class="alert alert-danger">
         Hero Name is required
-      </div>
-    </div>
+      </div></td>
+    </tr>
 
-    <div>
-      <label for="signedAccords">Signed Accords</label>
-      <input type="radio" id="signedAccordsYes" name="signedAccords" [(ngModel)]="model.signedAccords"  #signedAccords="ngModel" value="Yes">
+    <tr><td>
+      <label for="signedAccords">Signed Accords</label></td>
+      <td><input type="radio" id="signedAccordsYes" name="signedAccords" [(ngModel)]="model.signedAccords"  #signedAccords="ngModel" value="Yes">
       <label for="signedAccordsYes">Yes</label>
-
+    
       <input type="radio" id="signedAccordsNo" name="signedAccords" [(ngModel)]="model.signedAccords"  #signedAccords="ngModel" value="No">
-      <label for="signedAccordsNo">No</label>
-    </div>
+      <label for="signedAccordsNo">No</label></td>
+    </tr>
 
-
+    <tr><td colspan="2">
     <button type="submit" [disabled]="!heroForm.form.valid">
         <div *ngIf="isLoaded;then content else other_content">Something is Wrong</div>
     </button>
     <ng-template #content>Update Hero</ng-template>
-    <ng-template #other_content>Create Hero</ng-template>
+    <ng-template #other_content>Create Hero</ng-template></td>
+    </tr>
+    <tr>
+    <td colspan="2">
     <div *ngIf="isLoaded;"><button (click)="addSkill(model)"> Add Skill</button></div>
+    </td>
+    </tr>
+    <tr><td colspan="2">
     <div *ngIf="lastModifiedHero != undefined;">
         <label for="lastHero">Last Modified Hero:{{lastModifiedHero.realName }}
         </label>
       </div>
-
+    </td></tr>
+    </table>
   </form>
 </div>

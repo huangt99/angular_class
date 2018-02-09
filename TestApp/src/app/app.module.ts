@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -14,13 +13,7 @@ import { EncodedStringPipe } from './encoded-string.pipe';
 import { HeroskillComponent } from './heroskill/heroskill.component';
 import { heroReducer } from './reducers/hero.reducer'
 import { StoreModule } from '@ngrx/store'
-
-const appRoutes: Routes = [
-  { path: 'heros', component: DashboardComponent },
-  { path: 'hero/:id',      component: HeroformComponent },
-  { path: 'herocreate',      component: HeroformComponent },
-  { path: 'skill/:id',      component: HeroskillComponent }
-];
+import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +27,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
+    RoutingModule,
     StoreModule.forRoot({lastHero: heroReducer})
   ],
   providers: [HeroService, HttpClient],
