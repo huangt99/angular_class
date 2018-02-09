@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store'
 import { Observable } from 'rxjs/Observable'
 import { AppState } from '../interface/app.state'
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-heroform',
@@ -20,14 +21,14 @@ export class HeroformComponent implements OnInit {
     private store: Store<AppState>) {
   }
 
-  groupKeys:string[] = Object.keys(HeroGroupEnum);
-  groupAll = HeroGroupEnum;
+  groups: HeroGroup[]=[];
 
   lastModifiedHero: Hero;
   isLoaded = false;
   model = new Hero();
 
   onSubmit() {
+    this.updateGroups();
     console.log(this.model);
 
     this.heroService.addHero(this.model).subscribe(data => {
@@ -45,7 +46,12 @@ export class HeroformComponent implements OnInit {
         this.heroService.getHero(uuid).subscribe(hero => {
           this.model = hero;
           this.isLoaded = true;
+          this.initGroups(hero);
         });
+      }
+      else
+      {
+        this.initGroups(this.model);
       }
     });
 
@@ -62,10 +68,55 @@ export class HeroformComponent implements OnInit {
    });
   }
 
+  initGroups(hero: Hero)
+  {
+    let keys: string[] = Object.keys(HeroGroupEnum);
+    
+    this.groups = [];
+    for(let key of keys)
+    {
+       let group: HeroGroup = new HeroGroup();
+       group.name = key;
+       group.value= HeroGroupEnum[key];
+
+       if(hero != undefined && hero.groups != undefined)
+       {
+          if(hero.groups.indexOf(key)>=0)
+          {
+            group.checked = true;
+          }
+          else
+          {
+            group.checked = false;
+          }
+       }
+
+       this.groups.push(group);
+    }
+  }
+
+  updateGroups()
+  {
+    this.model.groups=[];
+
+    for(let group of this.groups)
+    {
+      if(group.checked==true)
+      {
+        this.model.groups.push(group.name);
+      }
+    }
+  }
   addSkill(hero: Hero)
   {
     this.router.navigateByUrl('/skill/'+hero.uuid);
   }
+}
+
+export class HeroGroup
+{
+  constructor(public checked?: boolean, public name?:string, public value?: string)
+  {};
 }
 
 export enum HeroGroupEnum {

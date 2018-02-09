@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n</div>\n<a routerLink=\"/\" routerLinkActive=\"active\">Home</a> | \n<a routerLink=\"/herocreate\" routerLinkActive=\"active\">Create A Hero</a> | \n<a routerLink=\"/heros\" routerLinkActive=\"active\">Hero's List</a>\n<hr>\n<router-outlet></router-outlet>\n"
+module.exports = "<a routerLink=\"/\" routerLinkActive=\"active\">Home</a> | \n<a routerLink=\"/herocreate\" routerLinkActive=\"active\">Create A Hero</a> | \n<a routerLink=\"/heros\" routerLinkActive=\"active\">Hero's List</a>\n<hr>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -80,17 +80,17 @@ var AppComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__heroform_heroform_component__ = __webpack_require__("../../../../../src/app/heroform/heroform.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__hero_service__ = __webpack_require__("../../../../../src/app/hero.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__encoded_string_pipe__ = __webpack_require__("../../../../../src/app/encoded-string.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__heroskill_heroskill_component__ = __webpack_require__("../../../../../src/app/heroskill/heroskill.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__reducers_hero_reducer__ = __webpack_require__("../../../../../src/app/reducers/hero.reducer.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/@ngrx/store.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__heroform_heroform_component__ = __webpack_require__("../../../../../src/app/heroform/heroform.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__hero_service__ = __webpack_require__("../../../../../src/app/hero.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__encoded_string_pipe__ = __webpack_require__("../../../../../src/app/encoded-string.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__heroskill_heroskill_component__ = __webpack_require__("../../../../../src/app/heroskill/heroskill.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__reducers_hero_reducer__ = __webpack_require__("../../../../../src/app/reducers/hero.reducer.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ngrx_store__ = __webpack_require__("../../../../@ngrx/store/@ngrx/store.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__routing_routing_module__ = __webpack_require__("../../../../../src/app/routing/routing.module.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -111,33 +111,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var appRoutes = [
-    { path: 'heros', component: __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__["a" /* DashboardComponent */] },
-    { path: 'hero/:id', component: __WEBPACK_IMPORTED_MODULE_6__heroform_heroform_component__["a" /* HeroformComponent */] },
-    { path: 'herocreate', component: __WEBPACK_IMPORTED_MODULE_6__heroform_heroform_component__["a" /* HeroformComponent */] },
-    { path: 'skill/:id', component: __WEBPACK_IMPORTED_MODULE_10__heroskill_heroskill_component__["a" /* HeroskillComponent */] }
-];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__heroform_heroform_component__["a" /* HeroformComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__encoded_string_pipe__["a" /* EncodedStringPipe */],
-                __WEBPACK_IMPORTED_MODULE_10__heroskill_heroskill_component__["a" /* HeroskillComponent */]
+                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_4__dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__heroform_heroform_component__["a" /* HeroformComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__encoded_string_pipe__["a" /* EncodedStringPipe */],
+                __WEBPACK_IMPORTED_MODULE_9__heroskill_heroskill_component__["a" /* HeroskillComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
-                __WEBPACK_IMPORTED_MODULE_12__ngrx_store__["b" /* StoreModule */].forRoot({ lastHero: __WEBPACK_IMPORTED_MODULE_11__reducers_hero_reducer__["a" /* heroReducer */] })
+                __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_12__routing_routing_module__["a" /* RoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_11__ngrx_store__["b" /* StoreModule */].forRoot({ lastHero: __WEBPACK_IMPORTED_MODULE_10__reducers_hero_reducer__["a" /* heroReducer */] })
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_7__hero_service__["a" /* HeroService */], __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["a" /* HttpClient */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_6__hero_service__["a" /* HeroService */], __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["a" /* HttpClient */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -442,7 +436,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/heroform/heroform.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <form (ngSubmit)=\"onSubmit()\" #heroForm=\"ngForm\">\n    <div>\n      <label for=\"realName\">Real Name</label>\n      <input type=\"text\" required minlength=\"4\" [(ngModel)]=\"model.realName\" name=\"realName\" #realName=\"ngModel\">\n      <div [hidden]=\"realName.valid || realName.pristine\" class=\"alert alert-danger\">\n        Name is required\n      </div>\n    </div>\n\n    <div>\n      <label for=\"s3ImageUrl\">Image Url</label>\n      <input type=\"text\" [(ngModel)]=\"model.s3ImageUrl\" name=\"s3ImageUrl\" #s3ImageUrl=\"ngModel\">\n    </div>\n\n    <div>\n      <label for=\"uuid\">UUID</label>\n      <input type=\"text\" required minlength=\"4\" [(ngModel)]=\"model.uuid\" name=\"uuid\" #uuid=\"ngModel\">\n      <div [hidden]=\"uuid.valid || uuid.pristine\" class=\"alert alert-danger\">\n        UUID is required\n      </div>\n    </div>\n\n    <div>\n      <label for=\"powers\">Powers</label>\n      <input type=\"text\" [(ngModel)]=\"model.powers\" name=\"powers\" #powers=\"ngModel\">\n    </div>\n\n    <div>\n      <label for=\"heroName\">Hero Name</label>\n      <input type=\"text\" required minlength=\"4\" [(ngModel)]=\"model.heroName\" name=\"heroName\" #heroName=\"ngModel\">\n      <div [hidden]=\"heroName.valid || heroName.pristine\" class=\"alert alert-danger\">\n        Hero Name is required\n      </div>\n    </div>\n\n    <div>\n      <label for=\"signedAccords\">Signed Accords</label>\n      <input type=\"radio\" id=\"signedAccordsYes\" name=\"signedAccords\" [(ngModel)]=\"model.signedAccords\"  #signedAccords=\"ngModel\" value=\"Yes\">\n      <label for=\"signedAccordsYes\">Yes</label>\n\n      <input type=\"radio\" id=\"signedAccordsNo\" name=\"signedAccords\" [(ngModel)]=\"model.signedAccords\"  #signedAccords=\"ngModel\" value=\"No\">\n      <label for=\"signedAccordsNo\">No</label>\n    </div>\n\n\n    <button type=\"submit\" [disabled]=\"!heroForm.form.valid\">\n        <div *ngIf=\"isLoaded;then content else other_content\">Something is Wrong</div>\n    </button>\n    <ng-template #content>Update Hero</ng-template>\n    <ng-template #other_content>Create Hero</ng-template>\n    <div *ngIf=\"isLoaded;\"><button (click)=\"addSkill(model)\"> Add Skill</button></div>\n    <div *ngIf=\"lastModifiedHero != undefined;\">\n        <label for=\"lastHero\">Last Modified Hero:{{lastModifiedHero.realName }}\n        </label>\n      </div>\n\n  </form>\n</div>\n"
+module.exports = "<div>\n    <form (ngSubmit)=\"onSubmit()\" #heroForm=\"ngForm\">\n      <div class=\"form-group row\">\n        <label for=\"realName\" class=\"col-sm-2 col-form-label\">Real Name</label>\n        <input type=\"text\" required minlength=\"4\" [(ngModel)]=\"model.realName\" name=\"realName\" #realName=\"ngModel\">\n        <div [hidden]=\"realName.valid || realName.pristine\" class=\"alert alert-danger\">\n          Name is required\n        </div>\n      </div>\n\n      <div class=\"form-group row\"> \n        <label for=\"s3ImageUrl\" class=\"col-sm-2 col-form-label\">Image Url</label>\n        <input type=\"text\" [(ngModel)]=\"model.s3ImageUrl\" name=\"s3ImageUrl\" #s3ImageUrl=\"ngModel\">\n      </div>\n  \n      <div class=\"form-group row\">\n        <label for=\"uuid\" class=\"col-sm-2 col-form-label\">UUID</label>\n        <input type=\"text\" required minlength=\"4\" [(ngModel)]=\"model.uuid\" name=\"uuid\" #uuid=\"ngModel\">\n        <div [hidden]=\"uuid.valid || uuid.pristine\" class=\"alert alert-danger\">\n          UUID is required\n        </div>\n      </div>\n  \n      <div class=\"form-group row\">\n        <label for=\"powers\" class=\"col-sm-2 col-form-label\">Powers</label>\n        <input type=\"text\" [(ngModel)]=\"model.powers\" name=\"powers\" #powers=\"ngModel\">\n      </div>\n  \n      <div class=\"form-group row\">\n        <label for=\"heroName\" class=\"col-sm-2 col-form-label\">Hero Name</label>\n        <input type=\"text\" required minlength=\"4\" [(ngModel)]=\"model.heroName\" name=\"heroName\" #heroName=\"ngModel\">\n        <div [hidden]=\"heroName.valid || heroName.pristine\" class=\"alert alert-danger\">\n          Hero Name is required\n        </div>\n      </div>\n\n      <fieldset class=\"form-group\">\n      <div class=\"row\">\n        <label class=\"col-sm-2 col-form-label \">Signed Accord</label>\n        <div class=\"col-sm-10\">\n            <div class=\"form-check\">\n            <input class=\"form-check-input\" type=\"radio\" id=\"signedAccordsYes\" name=\"signedAccords\" [(ngModel)]=\"model.signedAccords\"  #signedAccords=\"ngModel\" value=\"Yes\">\n            <label class=\"form-check-label\" for=\"signedAccordsYes\">Yes</label>\n            </div>\n            <div class=\"form-check\">\n                    <input class=\"form-check-input\" type=\"radio\" id=\"signedAccordsNo\" name=\"signedAccords\" [(ngModel)]=\"model.signedAccords\"  #signedAccords=\"ngModel\" value=\"No\">\n                    <label class=\"form-check-label\" for=\"signedAccordsNo\">No</label>\n            </div>\n        </div>\n      </div>\n    </fieldset>\n\n    <fieldset class=\"form-group\">\n    <div class=\"row\">\n        <label for=\"groups\" class=\"col-sm-2 col-form-label\">Groups</label>\n        <div class=\"col-sm-10\">\n             <div class=\"form-check\" *ngFor=\"let group of groups;let i = index\">\n                  <input class=\"form-check-input\" type=\"checkbox\" value=\"group.name\" [checked]=\"group.checked\" (change)=\"group.checked = !group.checked\" id=\"groups_{{i}}\">\n                  <label class=\"form-check-label\" for=\"groups_{{i}}\">{{group.value}}</label>\n            </div>\n        </div>\n    </div>\n    </fieldset>\n\n      <div class=\"form-group row\">\n      <button type=\"submit\" [disabled]=\"!heroForm.form.valid\" class=\"btn btn-primary\">\n          <div *ngIf=\"isLoaded;then content else other_content\">Something is Wrong</div>\n      </button>\n      <ng-template #content>Update Hero</ng-template>\n      <ng-template #other_content>Create Hero</ng-template> &nbsp;&nbsp;\n      <div *ngIf=\"isLoaded;\"><button (click)=\"addSkill(model)\" class=\"btn btn-secondary\"> Add Skill</button></div>\n      </div>\n\n      <div *ngIf=\"lastModifiedHero != undefined;\" class=\"form-group row\">\n          <label for=\"lastHero\">Last Modified Hero:{{lastModifiedHero.realName }}\n          </label>\n        </div>\n  \n    </form>\n  </div>\n  "
 
 /***/ }),
 
@@ -451,6 +445,8 @@ module.exports = "<div>\n  <form (ngSubmit)=\"onSubmit()\" #heroForm=\"ngForm\">
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeroformComponent; });
+/* unused harmony export HeroGroup */
+/* unused harmony export HeroGroupEnum */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hero__ = __webpack_require__("../../../../../src/app/hero.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hero_service__ = __webpack_require__("../../../../../src/app/hero.service.ts");
@@ -476,11 +472,13 @@ var HeroformComponent = /** @class */ (function () {
         this.router = router;
         this.route = route;
         this.store = store;
+        this.groups = [];
         this.isLoaded = false;
         this.model = new __WEBPACK_IMPORTED_MODULE_1__hero__["a" /* Hero */]();
     }
     HeroformComponent.prototype.onSubmit = function () {
         var _this = this;
+        this.updateGroups();
         console.log(this.model);
         this.heroService.addHero(this.model).subscribe(function (data) {
             _this.store.dispatch({ type: "Update", payload: _this.model });
@@ -496,7 +494,11 @@ var HeroformComponent = /** @class */ (function () {
                 _this.heroService.getHero(uuid).subscribe(function (hero) {
                     _this.model = hero;
                     _this.isLoaded = true;
+                    _this.initGroups(hero);
                 });
+            }
+            else {
+                _this.initGroups(_this.model);
             }
         });
         this.store.subscribe(function (state) {
@@ -508,6 +510,34 @@ var HeroformComponent = /** @class */ (function () {
                 console.log("last modified hero is empty");
             }
         });
+    };
+    HeroformComponent.prototype.initGroups = function (hero) {
+        var keys = Object.keys(HeroGroupEnum);
+        this.groups = [];
+        for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {
+            var key = keys_1[_i];
+            var group = new HeroGroup();
+            group.name = key;
+            group.value = HeroGroupEnum[key];
+            if (hero != undefined && hero.groups != undefined) {
+                if (hero.groups.indexOf(key) >= 0) {
+                    group.checked = true;
+                }
+                else {
+                    group.checked = false;
+                }
+            }
+            this.groups.push(group);
+        }
+    };
+    HeroformComponent.prototype.updateGroups = function () {
+        this.model.groups = [];
+        for (var _i = 0, _a = this.groups; _i < _a.length; _i++) {
+            var group = _a[_i];
+            if (group.checked == true) {
+                this.model.groups.push(group.name);
+            }
+        }
     };
     HeroformComponent.prototype.addSkill = function (hero) {
         this.router.navigateByUrl('/skill/' + hero.uuid);
@@ -526,6 +556,23 @@ var HeroformComponent = /** @class */ (function () {
     return HeroformComponent;
 }());
 
+var HeroGroup = /** @class */ (function () {
+    function HeroGroup(checked, name, value) {
+        this.checked = checked;
+        this.name = name;
+        this.value = value;
+    }
+    ;
+    return HeroGroup;
+}());
+
+var HeroGroupEnum;
+(function (HeroGroupEnum) {
+    HeroGroupEnum["avenger"] = "Avengers";
+    HeroGroupEnum["xmen"] = "X-men";
+    HeroGroupEnum["local"] = "Local";
+    HeroGroupEnum["columbus"] = "Columbus  Heros";
+})(HeroGroupEnum || (HeroGroupEnum = {}));
 
 
 /***/ }),
@@ -618,6 +665,55 @@ var heroReducer = function (state, action) {
     }
     return state;
 };
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/routing/routing.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoutingModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__heroform_heroform_component__ = __webpack_require__("../../../../../src/app/heroform/heroform.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__heroskill_heroskill_component__ = __webpack_require__("../../../../../src/app/heroskill/heroskill.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var appRoutes = [
+    { path: 'heros', component: __WEBPACK_IMPORTED_MODULE_3__dashboard_dashboard_component__["a" /* DashboardComponent */] },
+    { path: 'hero/:id', component: __WEBPACK_IMPORTED_MODULE_4__heroform_heroform_component__["a" /* HeroformComponent */] },
+    { path: 'herocreate', component: __WEBPACK_IMPORTED_MODULE_4__heroform_heroform_component__["a" /* HeroformComponent */] },
+    { path: 'skill/:id', component: __WEBPACK_IMPORTED_MODULE_5__heroskill_heroskill_component__["a" /* HeroskillComponent */] }
+];
+var RoutingModule = /** @class */ (function () {
+    function RoutingModule() {
+    }
+    RoutingModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
+            ],
+            exports: [__WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */]],
+            declarations: []
+        })
+    ], RoutingModule);
+    return RoutingModule;
+}());
+
 
 
 /***/ }),
