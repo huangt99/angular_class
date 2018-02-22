@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EncodedStringPipe } from './encoded-string.pipe';
 import { HeroskillComponent } from './heroskill/heroskill.component';
 import { heroReducer } from './reducers/hero.reducer'
+<<<<<<< HEAD
 import { StoreModule } from '@ngrx/store';
 import { CustomerComponent } from './customer/customer.component'
 
@@ -22,6 +22,10 @@ const appRoutes: Routes = [
   { path: 'herocreate',      component: HeroformComponent },
   { path: 'skill/:id',      component: HeroskillComponent }
 ];
+=======
+import { StoreModule } from '@ngrx/store'
+import { RoutingModule } from './routing/routing.module';
+>>>>>>> bcc25ae2c5e5102f48f53f53c3e0e4991e07d1e3
 
 @NgModule({
   declarations: [
@@ -36,7 +40,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
+    RoutingModule,
     StoreModule.forRoot({lastHero: heroReducer})
   ],
   providers: [HeroService, HttpClient],

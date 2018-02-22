@@ -1,59 +1,81 @@
 <div>
-  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-    <div>
-      <label for="realName">Real Name</label>
-      <input type="text" required minlength="4" [(ngModel)]="model.realName" name="realName" #realName="ngModel">
-      <div [hidden]="realName.valid || realName.pristine" class="alert alert-danger">
-        Name is required
-      </div>
-    </div>
-
-    <div>
-      <label for="s3ImageUrl">Image Url</label>
-      <input type="text" [(ngModel)]="model.s3ImageUrl" name="s3ImageUrl" #s3ImageUrl="ngModel">
-    </div>
-
-    <div>
-      <label for="uuid">UUID</label>
-      <input type="text" required minlength="4" [(ngModel)]="model.uuid" name="uuid" #uuid="ngModel">
-      <div [hidden]="uuid.valid || uuid.pristine" class="alert alert-danger">
-        UUID is required
-      </div>
-    </div>
-
-    <div>
-      <label for="powers">Powers</label>
-      <input type="text" [(ngModel)]="model.powers" name="powers" #powers="ngModel">
-    </div>
-
-    <div>
-      <label for="heroName">Hero Name</label>
-      <input type="text" required minlength="4" [(ngModel)]="model.heroName" name="heroName" #heroName="ngModel">
-      <div [hidden]="heroName.valid || heroName.pristine" class="alert alert-danger">
-        Hero Name is required
-      </div>
-    </div>
-
-    <div>
-      <label for="signedAccords">Signed Accords</label>
-      <input type="radio" id="signedAccordsYes" name="signedAccords" [(ngModel)]="model.signedAccords"  #signedAccords="ngModel" value="Yes">
-      <label for="signedAccordsYes">Yes</label>
-
-      <input type="radio" id="signedAccordsNo" name="signedAccords" [(ngModel)]="model.signedAccords"  #signedAccords="ngModel" value="No">
-      <label for="signedAccordsNo">No</label>
-    </div>
-
-
-    <button type="submit" [disabled]="!heroForm.form.valid">
-        <div *ngIf="isLoaded;then content else other_content">Something is Wrong</div>
-    </button>
-    <ng-template #content>Update Hero</ng-template>
-    <ng-template #other_content>Create Hero</ng-template>
-    <div *ngIf="isLoaded;"><button (click)="addSkill(model)"> Add Skill</button></div>
-    <div *ngIf="lastModifiedHero != undefined;">
-        <label for="lastHero">Last Modified Hero:{{lastModifiedHero.realName }}
-        </label>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group row">
+        <label for="realName" class="col-sm-2 col-form-label">Real Name</label>
+        <input type="text" required minlength="4" [(ngModel)]="model.realName" name="realName" #realName="ngModel">
+        <div [hidden]="realName.valid || realName.pristine" class="alert alert-danger">
+          Name is required
+        </div>
       </div>
 
-  </form>
-</div>
+      <div class="form-group row"> 
+        <label for="s3ImageUrl" class="col-sm-2 col-form-label">Image Url</label>
+        <input type="text" [(ngModel)]="model.s3ImageUrl" name="s3ImageUrl" #s3ImageUrl="ngModel">
+      </div>
+  
+      <div class="form-group row">
+        <label for="uuid" class="col-sm-2 col-form-label">UUID</label>
+        <input type="text" required minlength="4" [(ngModel)]="model.uuid" name="uuid" #uuid="ngModel">
+        <div [hidden]="uuid.valid || uuid.pristine" class="alert alert-danger">
+          UUID is required
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label for="powers" class="col-sm-2 col-form-label">Powers</label>
+        <input type="text" [(ngModel)]="model.powers" name="powers" #powers="ngModel">
+      </div>
+  
+      <div class="form-group row">
+        <label for="heroName" class="col-sm-2 col-form-label">Hero Name</label>
+        <input type="text" required minlength="4" [(ngModel)]="model.heroName" name="heroName" #heroName="ngModel">
+        <div [hidden]="heroName.valid || heroName.pristine" class="alert alert-danger">
+          Hero Name is required
+        </div>
+      </div>
+
+      <fieldset class="form-group">
+      <div class="row">
+        <label class="col-sm-2 col-form-label ">Signed Accord</label>
+        <div class="col-sm-10">
+            <div class="form-check">
+            <input class="form-check-input" type="radio" id="signedAccordsYes" name="signedAccords" [(ngModel)]="model.signedAccords"  #signedAccords="ngModel" value="Yes">
+            <label class="form-check-label" for="signedAccordsYes">Yes</label>
+            </div>
+            <div class="form-check">
+                    <input class="form-check-input" type="radio" id="signedAccordsNo" name="signedAccords" [(ngModel)]="model.signedAccords"  #signedAccords="ngModel" value="No">
+                    <label class="form-check-label" for="signedAccordsNo">No</label>
+            </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+    <div class="row">
+        <label for="groups" class="col-sm-2 col-form-label">Groups</label>
+        <div class="col-sm-10">
+             <div class="form-check" *ngFor="let group of groups;let i = index">
+                  <input class="form-check-input" type="checkbox" value="group.name" [checked]="group.checked" (change)="group.checked = !group.checked" id="groups_{{i}}">
+                  <label class="form-check-label" for="groups_{{i}}">{{group.value}}</label>
+            </div>
+        </div>
+    </div>
+    </fieldset>
+
+      <div class="form-group row">
+      <button type="submit" [disabled]="!heroForm.form.valid" class="btn btn-primary">
+          <div *ngIf="isLoaded;then content else other_content">Something is Wrong</div>
+      </button>
+      <ng-template #content>Update Hero</ng-template>
+      <ng-template #other_content>Create Hero</ng-template> &nbsp;&nbsp;
+      <div *ngIf="isLoaded;"><button (click)="addSkill(model)" class="btn btn-secondary"> Add Skill</button></div>
+      </div>
+
+      <div *ngIf="lastModifiedHero != undefined;" class="form-group row">
+          <label for="lastHero">Last Modified Hero:{{lastModifiedHero.realName }}
+          </label>
+        </div>
+  
+    </form>
+  </div>
+  
