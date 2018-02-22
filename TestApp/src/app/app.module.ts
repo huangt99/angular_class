@@ -13,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EncodedStringPipe } from './encoded-string.pipe';
 import { HeroskillComponent } from './heroskill/heroskill.component';
 import { heroReducer } from './reducers/hero.reducer'
-import { StoreModule } from '@ngrx/store'
+import { StoreModule } from '@ngrx/store';
+import { CustomerComponent } from './customer/customer.component'
 
 const appRoutes: Routes = [
   { path: 'heros', component: DashboardComponent },
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     HeroformComponent,
     EncodedStringPipe,
-    HeroskillComponent
+    HeroskillComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
